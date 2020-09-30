@@ -164,7 +164,7 @@ nav.navbar
 // blue line
 .bord
     margin: 0 auto
-    margin-top: 2em
+    margin-top: 3em
     margin-bottom: 1em
     border-bottom: 4px solid $blue
     max-width: 150px
@@ -203,10 +203,41 @@ footer
     line-height: 1.3em
     color: rgba(254, 253, 255, 0.6)
     p 
+        font-style:  "Noto Sans", sans-serif
         white-space: nowrap
         margin-bottom: 2px
         font-size: 15px
 
+.carousel-inner
+    max-height: 35vw
+    background-color: black
+
+    .carousel-caption
+        top: 15vw
+
+    img
+        opacity: 0.5
+
+    .carousel-indicators
+        margin-bottom: 0
+
+    .carousel-static-caption
+        width: 100%
+        display: flex
+        flex-flow: column
+        align-items: center
+        position: absolute
+        top: 15vw
+        z-index: 0
+
+@media screen and (min-width: 800px) 
+    .navbar
+        display: none
+    footer
+        .footertext
+            margin-left: 6.5em !important
+        img 
+            margin-top: 2px    
 
 
 @media screen and (min-width: 800px) 
