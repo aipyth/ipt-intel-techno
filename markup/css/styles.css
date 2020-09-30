@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
 body {
-  color: #fefdff;
+  color: #fefefe;
   font-family: "Noto Sans", sans-serif;
   background-color: #fefdff; }
   body p {
@@ -31,7 +31,7 @@ header {
 
 .logo img {
   max-width: 100px;
-  max-height: 50px; }
+  max-height: 55px; }
 
 .navbar-brand img {
   max-width: 100px;
@@ -134,13 +134,22 @@ nav.navbar {
   border-bottom: 4px solid #1a54e7;
   max-width: 150px; }
 
+#figlnk:hover {
+  text-decoration: none; }
+
 figure.figure {
   background-color: #fefdff;
-  margin: 0.1rem; }
+  box-shadow: 0 0 10px rgba(200, 200, 200, 0.7);
+  margin: 13px 10px;
+  transition: margin 0.4s ease; }
   figure.figure figcaption {
+    padding: 5px;
     font-family: "PT Serif", serif;
     line-height: 1rem;
     color: #333333; }
+
+figure.figure:hover {
+  margin: 6px 8px; }
 
 .datetime {
   font-size: 0.6rem; }
@@ -223,5 +232,7 @@ footer {
     font-size: 10px; }
   footer img {
     width: 60px; } }
+.maincont p {
+  color: #333333; }
 
 /*# sourceMappingURL=styles.css.map */
