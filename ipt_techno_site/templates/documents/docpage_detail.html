@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{{ docpage.name }}</h1>
+
+    <p>{{ docpage.text|safe }}</p>
+
+    {% for doc in docpage.files.all %}
+        <a href="{{ doc.upload.url }}">
+            <p>{{ doc.name }}</p>
+            <p>Updated: {{ doc.date }}</p>
+        </a>
+    {% endfor %}
+
+{% endblock %}
