@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap')
+$blue: rgb(26, 84, 231)
+$black: rgb(51, 51, 51)
+$navy: #55c1ff
+$white: #fefdff
+
+// Общие стили
+
+body
+ color: #000
+ font-family: "Noto Sans", sans-serif
+ background-color: $white
+ 
+ p 
+    font-family: "PT Serif", serif
+    line-height: 1rem
+    font-size: 1.1rem
+
+span 
+    line-height: 1rem
+    color: rgb(51, 51, 51)
+
+
+// header + logo
+
+header 
+    display: flex
+    background-color: $white
+    width: 100%
+    z-index: 3
+    span 
+        color: $white
+
+
+.logo 
+    width: 40%
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    padding: 10px
+    background-color: #1a54e7
+
+
+.logo img 
+    max-width: 100px
+    max-height: 55px
+
+
+
+.navbar-brand img
+    max-width: 100px
+    max-height: 50px
+
+
+.logo-text 
+    font-family: 'Raleway', sans-serif
+    font-weight: bold
+    font-size: 26px
+    color: #fefdff
+    margin: 0 15px
+    white-space: nowrap
+    line-height: 0.8em
+
+
+header .menu 
+    margin-top: 30px
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+
+.menu .menu-item a 
+    height: 100%
+    display: inline-block
+    text-align: center
+    padding: 20 15
+    font-family: 'Noto Sans', sans-serif
+    font-size: 20px
+    font-weight: 400
+    text-decoration: none
+    color: #1a54e7
+
+    transition: border 0.5s ease
+
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+
+
+.menu .menu-item:first-child 
+    margin-left: 80px
+
+
+.menu .menu-item a:hover 
+    border-bottom: 5px solid #1a54e7
+
+
+.menu-btn 
+    display: none
+
+
+.menu-icon 
+    display: none
+    content: ' '
+    height: 30px
+    width: 30px
+    border: 2px solid white
+    border-radius: 30%
+
+    cursor: pointer
+    user-select: none
+
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+
+// second logo
+
+nav.navbar
+    background-color: #1a54e7 !important
+
+
+#navitem
+    color: #fefdff
+    font-family: 'Noto Sans', sans-serif
+
+
+.phys-tech
+    font-size: 12px
+
+// dop content
+
+.dopcont 
+    padding: 10px
+    img
+        width: 200px
+    h2
+      padding: 0 15px
+      color: $blue
+    .caption
+        padding-left: 10px
+        padding-right: 10px
+    p.caption 
+      font-family: "PT Serif", serif
+      font-size: 22px
+      line-height: 1.7rem
+      text-align: justify
+      color: #333333
+
+.dopcontr
+    border-radius: 2px
+    border-left: 1.5px solid  #1a54e7
+    
+
+.dopcontl
+    border-radius: 2px
+    border-right: 1.5px solid  #1a54e7
+    
+    h2
+        text-align: right
+        white-space: nowrap
+    
+// blue line
+.bord
+    margin: 0 auto
+    margin-top: 3em
+    margin-bottom: 1em
+    border-bottom: 4px solid $blue
+    max-width: 150px
+
+// main blocks 3x3
+
+#figlnk:hover
+    text-decoration: none
+
+figure.figure 
+    background-color: #fefdff
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.7)
+    margin: 13px 10px
+
+    transition: margin 0.4s ease
+
+    figcaption
+        padding: 5px
+        font-family: "PT Serif", serif
+        line-height: 1rem
+        color: rgb(51, 51, 51)
+
+figure.figure:hover
+    margin: 6px 8px
+
+.datetime 
+    font-size: 0.6rem
+
+
+a.user 
+    font-size: 0.6rem
+//footer 
+
+footer 
+    background-color: rgb(26, 84, 231)
+    line-height: 1.3em
+    color: rgba(254, 253, 255, 0.6)
+    p 
+        font-style:  "Noto Sans", sans-serif
+        white-space: nowrap
+        margin-bottom: 2px
+        font-size: 15px
+
+.carousel-inner
+    max-height: 35vw
+    background-color: black
+
+    .carousel-caption
+        top: 15vw
+
+    img
+        opacity: 0.5
+
+    .carousel-indicators
+        margin-bottom: 0
+
+    .carousel-static-caption
+        width: 100%
+        display: flex
+        flex-flow: column
+        align-items: center
+        position: absolute
+        top: 15vw
+        z-index: 0
+
+@media screen and (min-width: 800px) 
+    .navbar
+        display: none
+    footer
+        .footertext
+            margin-left: 6.5em !important
+        img 
+            margin-top: 2px    
+
+
+@media screen and (min-width: 800px) 
+    .navbar
+        display: none
+    footer
+        .footertext
+            margin-left: 6.5em !important
+        img 
+            margin-top: 2px    
+
+
+@media screen and (max-width: 800px) 
+    .logo-text
+        float: right
+    
+
+    header 
+        flex-flow: column
+    
+
+    .logo 
+        width: 100%
+        justify-content: space-around
+        display: none
+    
+
+    header .menu 
+        display: none
+        top: -100px
+        transition: all .6s ease-in-out
+
+
+
+@media screen and (max-width: 450px)  
+
+    .logo-text
+       font-size: 20px
+   
+
+    .navbar-brand img 
+        max-width: 60px
+        margin-right: -10px
+   
+
+    .phys-tech
+        font-size: 8px
+
+    .dopcont 
+        p.caption 
+            font-size: 15px
+            line-height: 1.3em
+        h2
+            font-size: 25px
+        img
+            width: 150px
+   
+
+    .dopcontr
+        border-left: 2px solid  #1a54e7
+        margin-left: 15px
+    
+
+
+    .dopcontl
+        border-right: 2px solid  #1a54e7
+        margin-right: 15px
+
+    .bord
+        max-width: 50px
+
+    .user 
+        font-size: 0.4rem
+    .datetime
+        font-size: 0.4rem
+    footer
+        .footertext
+            margin-top: 4px !important
+        p 
+            font-size: 10px
+        img 
+            width: 60px
+
+// PAge styles
+
+.maincont
+    p
+        color: $black
