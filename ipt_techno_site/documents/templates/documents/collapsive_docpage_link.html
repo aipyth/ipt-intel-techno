@@ -1,0 +1,5 @@
+{% for docpage in docpages %}
+<li class="nav-item">
+    <a class="nav-link" id="navitem" href="{% url 'documents_detail' docpage.slug %}">{{ docpage.name }}</a>
+</li>
+{% endfor %}

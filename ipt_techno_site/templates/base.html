@@ -1,4 +1,5 @@
 {% load static %}
+{% load docpage_links %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -39,9 +40,10 @@
             <span class="menu-item px-3">
                 <a href="{% url 'post_list' %}">Blog</a>
             </span>
-            <span class="menu-item px-3">
-                <a href="{% url 'documents_list' %}">Documents</a>
-            </span>
+
+            {% get_docpages %}
+
+            {% comment %} Someday we'll write about us {% endcomment %}
             {% comment %} <span class="menu-item px-3">
                 <a href="">About Us</a>
             </span> {% endcomment %}
@@ -72,9 +74,9 @@
                     <li class="nav-item">
                         <a class="nav-link" id="navitem" href="{% url 'post_list' %}">Blog</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="navitem" href="{% url 'documents_list' %}">Documents</a>
-                    </li>
+
+                    {% get_docpages_collapsive %}
+                    
                     {% comment %} <li class="nav-item">
                         <a class="nav-link" id="navitem" href="#">About Us</a>
                     </li> {% endcomment %}

@@ -1,0 +1,5 @@
+{% for docpage in docpages %}
+<span class="menu-item px-3">
+    <a href="{% url 'documents_detail' docpage.slug %}">{{ docpage.name }}</a>
+</span>
+{% endfor %}
