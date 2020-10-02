@@ -28,8 +28,7 @@ header {
   justify-content: flex-end;
   align-items: center;
   padding: 10px;
-  background-color: #1a54e7;
-  box-shadow: 0 0 10px #c8c8c8; }
+  background-color: #1a54e7; }
 
 .logo img {
   max-width: 100px;
@@ -283,6 +282,33 @@ span.important {
     float: right; }
   .maincont .topandbottom {
     z-index: -1; }
+
+.static-main {
+  margin-bottom: 0;
+  padding-top: 20px;
+  padding: 25px; }
+  .static-main p {
+    color: #333333;
+    font-size: 100%; }
+  .static-main .bord {
+    margin-top: 15px; }
+  .static-main .bord-2 {
+    margin-bottom: 20px; }
+
+.downloadfiles {
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: row;
+  flex-grow: 2;
+  border: 1px solid black;
+  margin-top: 20px;
+  align-items: stretch; }
+
+.downloadfile {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(200, 200, 200, 0.7); }
 
 @media screen and (min-width: 800px) {
   .navbar {
