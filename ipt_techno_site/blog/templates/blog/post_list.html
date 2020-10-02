@@ -1,29 +1,53 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block content %}
-    {% for post in post_list %}
-    <h2><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></h3>
-    <p>{{ post.author }} - {{ post.created_on }}</p>
-    <p>{{ post.content|striptags|safe|slice:":200" }}</p>
-    {% endfor %}
 
-    <div class="pagination">
-        <span class="step-links">
-            {% if page_obj.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
+    <div class="posts-container-ws">
+        <div class="posts-container">
+            {% for post in post_list %}
+                <div class="postcard">
+                    <a href="{% url 'post_detail' post.slug %}" id="figlnk">
+                        <div class="image-container">
+                            <img src="{{ post.title_image.url }}" alt="">
+                        </div>
+                        <div class="caption">
+                            <h4>{{ post.title }}</h4>
+                            
+                            <p>{{ post.content|striptags|slice:":150" }}</p>
 
-            <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-            </span>
-
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-            {% endif %}
-        </span>
+                            <div class="pub-date-author">
+                                <span class="pub-date">{{ post.created_on|naturaltime }}</span>
+                                <span class="author">{{ post.author }}</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
     </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.paginator.count > 3 %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.start_index }}">First</a></li>
+            {% endif %}
+
+            <li class="page-item {% if not page_obj.has_previous %} disabled {% endif %}">
+                <a class="page-link" href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}">Previous</a>
+            </li>
+
+            <li class="page-item active"><a class="page-link" href="#">{{ page_obj.number }}</a></li>
+
+            <li class="page-item {% if not page_obj.has_next %} disabled {% endif %}">
+                <a class="page-link" href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}">Next</a>
+            </li>
+
+            {% if page_obj.paginator.count > 3 %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.end_index }}">Last</a></li>
+            {% endif %}
+        </ul>
+    </nav>
 
 {% endblock %}
