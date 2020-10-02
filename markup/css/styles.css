@@ -475,6 +475,16 @@ span.important {
   border-bottom: 2px dashed -webkit-link;
 }
 
+.downloadfile span.updated {
+  text-decoration: none;
+  color: #333333;
+  font-size: 40%;
+  float: right;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: -15px;
+}
+
 .posts-container-ws {
   width: 100%;
   display: -webkit-box;
