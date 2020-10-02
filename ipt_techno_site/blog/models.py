@@ -22,3 +22,12 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} ({self.created_on})"
+
+
+class SliderPost(models.Model):
+    title = models.CharField(max_length=80, blank=True)
+    image = models.ImageField(upload_to='slider_images/%Y/%m/%d/')
+    text = models.CharField(max_length=280, blank=True)
+    active = models.BooleanField(default=False)
+    updated_on = models.DateTimeField(auto_now=True)
+    created_on = models.DateTimeField(auto_now_add=True)

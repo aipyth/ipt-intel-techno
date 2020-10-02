@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, SliderPost
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -17,4 +17,17 @@ class PostAdmin(SummernoteModelAdmin):
         super().save_model(request, obj, form, change)
 
 
+class SliderPostAdmin(admin.ModelAdmin):
+    list_display = ('title', 'active')
+    list_filter = ['active']
+    search_fields = ['title', 'text']
+    actions = ['make_active', 'make_unactive']
+
+    def make_active(self, request, queryset):
+        queryset.update(active=True)
+    
+    def make_unactive(self, request, queryset):
+        queryset.update(active=False)
+
 admin.site.register(Post, PostAdmin)
+admin.site.register(SliderPost, SliderPostAdmin)

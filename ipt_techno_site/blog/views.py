@@ -1,13 +1,15 @@
 from django.views import generic
 from django.shortcuts import render
 
-from .models import Post
+from .models import Post, SliderPost
 
 
 def home_view(request):
+    slider_posts = SliderPost.objects.filter(active=True).order_by('-updated_on')
+    posts = Post.objects.filter(status=1).order_by('-created_on')[:9]
     context = {
-        'slider_posts': Post.objects.filter(status=1).order_by('-created_on')[:3],
-        'posts_preview': Post.objects.filter(status=1).order_by('-created_on')[:9]
+        'slider_posts': slider_posts,
+        'posts_preview': posts,
     }
     return render(request, 'blog/index.html', context)
 
