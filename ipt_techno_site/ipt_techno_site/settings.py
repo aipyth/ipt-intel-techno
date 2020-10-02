@@ -26,7 +26,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '@*)+=(!+f)37br^)^u=&ny1$+g-k)%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'e2f64b3caf3c.ngrok.io'
+]
 
 
 # Application definition

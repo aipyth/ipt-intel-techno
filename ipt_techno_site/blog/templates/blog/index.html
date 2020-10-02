@@ -101,7 +101,7 @@
 </div>
 
 
-<div class="container mt-2">
+{% comment %} {<div class="container mt-2">
     <div class="row justify-content-center">
         <div class="col-12">
             <div class="row justify-content-center">
@@ -114,7 +114,6 @@
 
                                 <figcaption class="figure-caption">{{ post.content|striptags|slice:":40" }}</figcaption>
                                 <span class="datetime">{{ post.created_on|naturaltime }} | {{ post.author }}</span>
-                                {% comment %} <a href="#" class="user">{{ post.author }}</a> {% endcomment %}
                             </figure>
                         </a>
                     </div>
@@ -122,6 +121,30 @@
                 {% endfor %}
             </div>
         </div>
+    </div>
+</div> {% endcomment %}
+
+<div class="posts-container-ws">
+    <div class="posts-container">
+        {% for post in posts_preview %}
+            <div class="postcard">
+                <a href="{% url 'post_detail' post.slug %}" id="figlnk">
+                    <div class="image-container">
+                        <img src="{{ post.title_image.url }}" alt="">
+                    </div>
+                    <div class="caption">
+                        <h4>{{ post.title }}</h4>
+                        
+                        <p>{{ post.content|striptags|slice:":150" }}</p>
+
+                        <div class="pub-date-author">
+                            <span class="pub-date">{{ post.created_on|naturaltime }}</span>
+                            <span class="author">{{ post.author }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
     </div>
 </div>
 
