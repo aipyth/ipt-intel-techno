@@ -221,7 +221,7 @@ figure.figure:active
 
 .datetime 
     padding-left: 5px
-    font-size: 0.6rem
+    font-size: 0.em
 
 
 a.user 
@@ -276,6 +276,8 @@ span.important
     .col-lg-5
         border-bottom: 1px solid rgb(245, 226, 214)
     .content
+        position: relative
+        width: 100%
         margin: 30px
         padding: 0 25px
         border-left: 2px solid $blue
@@ -334,16 +336,18 @@ span.important
 
 //Static page styles
 
-
-
-
 .static-main
+    margin-bottom: 0
     p
         color: $black
         font-size: 100%
-    margin-bottom: 0
-    padding-top: 20px
-    padding: 25px
+        margin-bottom: 0
+        padding-top: 20px
+        padding: 25px
+    h2
+        color: $blue
+        border-bottom: 1.5px solid $blue
+        padding: 5px
     .bord
         margin-top: 15px
     .bord-2
@@ -353,18 +357,21 @@ span.important
     flex-flow: row wrap
     flex-direction: row
     flex-grow: 2
-    border: 1px solid black
-    margin-top: 20px
+    margin-bottom: 15px
     align-items: stretch
 .downloadfile
-    flex-grow: 1
+    font-size: 1.2rem   
+    display: inline-block
     padding: 10px
-    border: 1px solid black
-    box-shadow: 0 0 10px rgba(200, 200, 200, 0.7)
-
-
-
-
+    padding-left: 40px
+    padding-bottom: 15px
+    box-shadow: 0 0 5px rgba(100, 100, 100, 1)
+    border-radius: 10px 10px
+    margin: 15px
+    span
+        text-decoration: none
+        color: -webkit-link
+        border-bottom: 2px dashed -webkit-link
 
 
 

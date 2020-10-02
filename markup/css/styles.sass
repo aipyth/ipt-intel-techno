@@ -5,17 +5,20 @@ $black: rgb(51, 51, 51)
 $navy: #55c1ff
 $white: #fefdff
 
+*
+    box-sizing: border-box
+
 // Общие стили
 
 body
- color: #fefefe
- font-family: "Noto Sans", sans-serif
- background-color: $white
+    color: #fefefe
+    font-family: "Noto Sans", sans-serif
+    background-color: $white
  
- p 
-    font-family: "PT Serif", serif
-    line-height: 1rem
-    font-size: 1.1rem
+    p 
+        font-family: "PT Serif", serif
+        line-height: 1rem
+        font-size: 1.1rem
 
 span 
     line-height: 1rem
@@ -137,17 +140,17 @@ nav.navbar
     img
         width: 200px
     h2
-      padding: 0 15px
-      color: $blue
+        padding: 0 15px
+        color: $blue
     .caption
         padding-left: 10px
         padding-right: 10px
     p.caption 
-      font-family: "PT Serif", serif
-      font-size: 22px
-      line-height: 1.7rem
-      text-align: justify
-      color: #333333
+        font-family: "PT Serif", serif
+        font-size: 22px
+        line-height: 1.7rem
+        text-align: justify
+        color: #333333
 
 .dopcontr
     border-radius: 2px
@@ -177,6 +180,7 @@ button.click-me
 // blue line
 .bord
     margin: 0 auto
+    border-radius: 28%
     margin-top: 3em
     margin-bottom: 1em
     border-bottom: 4px solid $blue
@@ -217,7 +221,7 @@ figure.figure:active
 
 .datetime 
     padding-left: 5px
-    font-size: 0.6rem
+    font-size: 0.7em
 
 
 a.user 
@@ -240,6 +244,11 @@ footer
 
     .carousel-caption
         top: 15vw
+        @media screen and (max-width: 700px)
+            top: 8vw
+        @media screen and (max-width: 500px)
+            top: 0
+
 
     img
         opacity: 0.5
@@ -267,24 +276,16 @@ span.important
     .col-lg-5
         border-bottom: 1px solid rgb(245, 226, 214)
     .content
+        position: relative
+        width: 100%
         margin: 30px
         padding: 0 25px
         border-left: 2px solid $blue
         border-right: 2px solid $blue
-        img.main-img
-            float: left
-            padding-left: 15px
-            padding-right: 15px
-            max-width: 500px
-        img.center-img
+        img
             display: block
             margin: 15px auto
-        img.right-img
-            float: right
-            padding-left: 15px
-            padding-right: 15px
-            max-width: 400px
-    .auth
+
 
     .author
         background-color: rgba(255, 255, 255, 0.521)
@@ -297,7 +298,7 @@ span.important
         max-width: 40%
         margin-top: 1em
         margin-left: -1em
-        padding-right: 4em
+        padding-right: 3em
         background-image: url('../images/blank-profile.png')
         background-repeat: no-repeat
         background-size: 25% 
@@ -312,9 +313,6 @@ span.important
             text-align: right
             font-size: 60%
             display: none
-
-            
-
     p
         color: $black
         line-height: 1.5em
@@ -325,6 +323,7 @@ span.important
         color: $blue
         font-size: 35px
         padding-left: 10%
+        margin: 15px 0
     .maincont-footer
         color: rgba(189, 137, 126, 0.5)
         padding-top: 25px
@@ -341,12 +340,17 @@ span.important
 
 
 .static-main
+    margin-bottom: 0
     p
         color: $black
         font-size: 100%
-    margin-bottom: 0
-    padding-top: 20px
-    padding: 25px
+        margin-bottom: 0
+        padding-top: 20px
+        padding: 25px
+    h2
+        color: $blue
+        border-bottom: 1.5px solid $blue
+        padding: 5px
     .bord
         margin-top: 15px
     .bord-2
@@ -356,16 +360,103 @@ span.important
     flex-flow: row wrap
     flex-direction: row
     flex-grow: 2
-    border: 1px solid black
-    margin-top: 20px
+    margin-bottom: 15px
     align-items: stretch
 .downloadfile
-    flex-grow: 1
+    font-size: 1.2rem   
+    display: inline-block
     padding: 10px
-    border: 1px solid black
-    box-shadow: 0 0 10px rgba(200, 200, 200, 0.7)
+    padding-left: 40px
+    padding-bottom: 15px
+    box-shadow: 0 0 5px rgba(100, 100, 100, 1)
+    border-radius: 10px 10px
+    margin: 15px
+    span
+        text-decoration: none
+        color: -webkit-link
+        border-bottom: 2px dashed -webkit-link
 
 
+
+
+
+
+
+// Post card on home screen
+$postcard-width: 350px
+// $postcard-width: 30%
+$postcard-height: 300px
+$image-container-height: 150px
+.posts-container-ws
+    width: 100%
+    display: flex
+    justify-content: center
+
+    .posts-container
+        max-width: 1200px
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        justify-content: space-around
+
+        .postcard
+            display: flex
+            flex-direction: column
+            max-width: $postcard-width
+            height: $postcard-height
+            margin: 10px 15px
+            box-shadow: 0 0 10px rgba(200, 200, 200, 0.7)
+            // @media screen and (max-width: 900px)
+            //     max-width: 45%
+            //     // height: 200px
+            // @media screen and (max-width: 600px)
+            //     // max-width: 125px
+            //     max-width: 40%
+            //     // height: 80px
+
+            .image-container
+                width: $postcard-width
+                // width: 100%
+                // @media screen and (max-width: 600px)
+                //     width: 125px
+                height: $image-container-height
+                overflow: hidden
+                text-align: center
+                img
+                    // width: $postcard-width
+                    width: 100%
+                    object-fit: cover
+            .caption
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                height: $postcard-height - $image-container-height
+                color: black
+                overflow-wrap: break-word
+                margin: 0 8px 8px 8px
+
+                h4
+                    font-family: 'Noto Sans', sans-serif
+                    font-size: 1.1rem
+                    font-weight: 600
+                    text-align: center
+                    padding-top: 5px
+
+                p
+                    font-family: 'PT Serif', serif
+                    background: -webkit-linear-gradient(#444, #fff)
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent
+                    overflow: hidden
+                    margin-bottom: 0
+                .pub-date-author
+                    display: flex
+                    justify-content: space-between
+                    margin: 5px
+                    font-weight: 600
+                    font-size: 0.75rem
+                    .author
+                        color: $blue
 
 
 
@@ -411,30 +502,23 @@ span.important
     .maincont
         h1
             font-size: 200%
+        .author
+            max-width: 60%
+            span
+                font-size: 60%
 
         .content
             margin: 20px 10px
             padding: 0 25px
-            img.main-img
-                float: none
-                padding: 0
-                max-width: 100%
-                display: block
-                margin: 10px auto
-            img.center-img
+            img
                 max-width: 80%
-            img.right-img
-                float: none
-                max-width: 80%
-                display: block
-                margin: 10px auto
             p
                 font-size: 90%
 
 @media screen and (max-width: 450px)  
 
     .logo-text
-       font-size: 20px
+        font-size: 20px
    
 
     .navbar-brand img 
@@ -489,30 +573,17 @@ span.important
             border-bottom: none
         h1
             font-size: 200%
-            margin-top: 0
         
         .author
-            margin-top: 0
-            margin-bottom: 0
+            max-width: 60%
             span
-                font-size: 60%
+                font-size: 50%
 
         .content
             margin: 20px 10px
             padding: 0 25px
-            img.main-img
-                float: none
-                padding: 0
-                max-width: 100%
-                display: block
-                margin: 10px auto
-            img.center-img
+            img
                 max-width: 80%
-            img.right-img
-                float: none
-                max-width: 80%
-                display: block
-                margin: 10px auto
             p
                 font-size: 90%
     .thirdcol
