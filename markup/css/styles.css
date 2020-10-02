@@ -240,19 +240,18 @@ span.important {
       padding-right: 15px;
       max-width: 400px; }
   .maincont .author {
-    float: right;
     background-color: rgba(255, 255, 255, 0.521);
-    border: 3px solid rgba(245, 226, 214, 0.781);
+    border: 3px solid rgba(206, 180, 165, 0.781);
     padding: 10px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 20px;
     max-width: 40%;
     margin-top: 1em;
-    margin-right: -1em;
+    margin-left: -1em;
     padding-right: 4em;
-    background-image: url("../images/Layer 5.png");
+    background-image: url("../images/blank-profile.png");
     background-repeat: no-repeat;
     background-size: 25%;
     background-position: 10% 50%; }
@@ -269,7 +268,9 @@ span.important {
   .maincont p {
     color: #333333;
     line-height: 1.5em;
-    margin-top: -8px; }
+    margin-top: -8px;
+    overflow: wrap;
+    overflow-wrap: anywhere; }
   .maincont h1 {
     color: #1a54e7;
     font-size: 35px;

@@ -1,9 +1,90 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
+<div class="container" >
+  <div class="row">
+      <div class="col maincont">
+        <div class="row">
+          <div class="col-12 bg-light"  style="border-bottom: 1px solid rgb(245, 226, 214);">
+              <h1>{{ post.title }}</h1>
+            </div>
+            <div class="content">
+            {{ post.content|safe }}
+          </div> 
+          <div class="col topandbottom bg-light" style="border-top: 1px solid rgb(245, 226, 214);">
+            <div class="author float-left">
+            <span class=" float-left">I'm Author</span>
+            <br>
+            <span class="author-caption float-right">My rang and proffesion</span>
+          </div>
+             </div>
+          <div class="maincont-footer col topandbottom bg-light" style="border-top: 1px solid rgb(245, 226, 214);">
+            <div class="date">
+              <span class="datetime">{{ post.created_on }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="bord mt-2">
+</div>
+
+<!-- <div class="container mt-2 mb-3">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="row justify-content-center">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+          <div class="row">
+            <a href="#" id="figlnk">
+              <figure class= "figure">
+                <div class="flex">
+                <img src="./images/Layer 3.png" alt="smth">
+                </div>
+                <figcaption class="figure-caption">Donec elementum dui semper, pretium dui quis, pretium nisl. Nunc quis ornare odio.</figcaption>
+                <span class="datetime">12 September 23:59 |</span>
+                <a href="#" class="user">John Doe</a>
+              </figure>
+            </a>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+          <div class="row">
+            <a href="#" id="figlnk">
+              <figure class= "figure">
+                <div class="flex">
+                <img src="./images/Layer 5.png" alt="smth">
+                </div>
+                <figcaption class="figure-caption">Donec elementum dui semper, pretium dui quis, pretium nisl. Nunc quis ornare odio.</figcaption>
+                <span class="datetime">12 September 23:59 |</span>
+                <a href="#" class="user">John Doe</a>
+              </figure>
+            </a>
+          </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4 thirdcol">
+          <div class="row">
+            <a href="#" id="figlnk">
+            <figure class= "figure thirdcol">
+            <div class="flex">
+              <img src="./images/Slider.png" alt="smth">
+            </div>
+              <figcaption class="figure-caption">Donec elementum dui semper, pretium dui quis, pretium nisl. Nunc quis ornare odio.</figcaption>
+              <span class="datetime">12 September 23:59 |</span>
+              <a href="#" class="user">John Doe</a>
+            </figure>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+    <!-- <h1>{{ post.title }}</h1>
     <p>{{ post.author }} - {{ post.created_on }}</p>
 
-    {{ post.content|safe }}
+    {{ post.content|safe }} -->
 
 {% endblock %}
