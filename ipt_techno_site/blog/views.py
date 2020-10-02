@@ -17,7 +17,7 @@ def home_view(request):
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'blog/post_list.html'
-    paginate_by = 20
+    paginate_by = 12
 
 
 class PostDetail(generic.DetailView):

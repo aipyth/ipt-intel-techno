@@ -256,7 +256,7 @@ figure.figure:active {
 
 .datetime {
   padding-left: 5px;
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 
 a.user {
@@ -414,13 +414,20 @@ span.important {
 
 .static-main {
   margin-bottom: 0;
-  padding-top: 20px;
-  padding: 25px;
 }
 
 .static-main p {
   color: #333333;
   font-size: 100%;
+  margin-bottom: 0;
+  padding-top: 20px;
+  padding: 25px;
+}
+
+.static-main h2 {
+  color: #1a54e7;
+  border-bottom: 1.5px solid #1a54e7;
+  padding: 5px;
 }
 
 .static-main .bord {
@@ -444,21 +451,38 @@ span.important {
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
-  border: 1px solid black;
-  margin-top: 20px;
+  margin-bottom: 15px;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
 }
 
 .downloadfile {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  font-size: 1.2rem;
+  display: inline-block;
   padding: 10px;
-  border: 1px solid black;
-  -webkit-box-shadow: 0 0 10px rgba(200, 200, 200, 0.7);
-          box-shadow: 0 0 10px rgba(200, 200, 200, 0.7);
+  padding-left: 40px;
+  padding-bottom: 15px;
+  -webkit-box-shadow: 0 0 5px #646464;
+          box-shadow: 0 0 5px #646464;
+  border-radius: 10px 10px;
+  margin: 15px;
+}
+
+.downloadfile span {
+  text-decoration: none;
+  color: -webkit-link;
+  border-bottom: 2px dashed -webkit-link;
+}
+
+.downloadfile span.updated {
+  text-decoration: none;
+  color: #333333;
+  font-size: 40%;
+  float: right;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: -15px;
 }
 
 .posts-container-ws {
@@ -494,15 +518,27 @@ span.important {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 350px;
+  max-width: 30%;
   height: 300px;
   margin: 10px 15px;
   -webkit-box-shadow: 0 0 10px rgba(200, 200, 200, 0.7);
           box-shadow: 0 0 10px rgba(200, 200, 200, 0.7);
 }
 
+@media screen and (max-width: 900px) {
+  .posts-container-ws .posts-container .postcard {
+    max-width: 45%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .posts-container-ws .posts-container .postcard {
+    max-width: 40%;
+  }
+}
+
 .posts-container-ws .posts-container .postcard .image-container {
-  width: 350px;
+  width: 100%;
   height: 150px;
   overflow: hidden;
   text-align: center;

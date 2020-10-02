@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 
 {% block content %}
     {% comment %} 
@@ -19,6 +20,7 @@
             <div class="bord"></div>
                 <h1>{{ docpage.name }}</h1>
 
+<<<<<<< HEAD
                 <p>{{ docpage.text|safe }}</p>
     
                 {% for doc in docpage.files.all %}
@@ -30,6 +32,17 @@
                         </div>
                         </a>
                  </div>
+=======
+    <h1>{{ docpage.name }}</h1>
+
+    <p>{{ docpage.text|safe }}</p>
+
+    {% for doc in docpage.files.all %}
+        <a href="{{ doc.upload.url }}">
+            <p>{{ doc.name }}</p>
+            <p>Updated: {{ doc.date|naturaltime }}</p>
+        </a>
+>>>>>>> d0bc015fe721f0079cd5029795eb8a2f7ec58400
     {% endfor %}
          </div>
      </div>

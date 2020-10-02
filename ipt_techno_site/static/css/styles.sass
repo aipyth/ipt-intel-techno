@@ -221,7 +221,7 @@ figure.figure:active
 
 .datetime 
     padding-left: 5px
-    font-size: 0.em
+    font-size: 0.8em
 
 
 a.user 
@@ -384,8 +384,8 @@ span.important
 
 
 // Post card on home screen
-$postcard-width: 350px
-// $postcard-width: 30%
+// $postcard-width: 350px
+$postcard-width: 30%
 $postcard-height: 300px
 $image-container-height: 150px
 .posts-container-ws
@@ -407,24 +407,23 @@ $image-container-height: 150px
             height: $postcard-height
             margin: 10px 15px
             box-shadow: 0 0 10px rgba(200, 200, 200, 0.7)
-            // @media screen and (max-width: 900px)
-            //     max-width: 45%
-            //     // height: 200px
-            // @media screen and (max-width: 600px)
-            //     // max-width: 125px
-            //     max-width: 40%
-            //     // height: 80px
+            @media screen and (max-width: 900px)
+                max-width: 45%
+                // height: 200px
+            @media screen and (max-width: 600px)
+                // max-width: 125px
+                max-width: 40%
+                // height: 80px
 
             .image-container
-                width: $postcard-width
-                // width: 100%
+                // width: $postcard-width
+                width: 100%
                 // @media screen and (max-width: 600px)
                 //     width: 125px
                 height: $image-container-height
                 overflow: hidden
                 text-align: center
                 img
-                    // width: $postcard-width
                     width: 100%
                     object-fit: cover
             .caption
