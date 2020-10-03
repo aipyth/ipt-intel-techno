@@ -30,7 +30,7 @@
 
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
-            {% if page_obj.paginator.count > 3 %}
+            {% if page_obj.paginator.num_pages > 3 %}
             <li class="page-item"><a class="page-link" href="?page={{ page_obj.start_index }}">First</a></li>
             {% endif %}
 
@@ -44,7 +44,7 @@
                 <a class="page-link" href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}">Next</a>
             </li>
 
-            {% if page_obj.paginator.count > 3 %}
+            {% if page_obj.paginator.num_pages > 3 %}
                 <li class="page-item"><a class="page-link" href="?page={{ page_obj.end_index }}">Last</a></li>
             {% endif %}
         </ul>

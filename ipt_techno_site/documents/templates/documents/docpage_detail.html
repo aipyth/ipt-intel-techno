@@ -16,22 +16,22 @@ doc.date -- дата последней загрузки
 {% endcomment %}
 <div class="container">
     <div class="row">
-        <div class="col class static-main maincont">
-            <div class="bord"></div>
-            <h1>{{ docpage.name }}</h1>
+        <div class="col class static-main">
+            {% comment %} <div class="bord"></div> {% endcomment %}
+            <h1 class="docpage-header">{{ docpage.name }}</h1>
 
             <p>{{ docpage.text|safe }}</p>
 
+            <div class="downloadfiles">
             {% for doc in docpage.files.all %}
-            <div class="downloadfiles_row">
-                <a href="{{ doc.upload.url }}" class="downloadlink">
-                    <div class="downloadfile pdf">
-                        <span>{{ doc.name }}</span>
-                        <span class="updated">Updated: {{ doc.date }}</span>
-                    </div>
+                <a href="{{ doc.upload.url }}" class="downloadfile">
+                    {% comment %} <div class="downloadfile"> {% endcomment %}
+                        <h6>{{ doc.name }}</h6>
+                        <p class="updated">Updated: {{ doc.date|naturaltime }}</p>
+                    {% comment %} </div> {% endcomment %}
                 </a>
-            </div>
             {% endfor %}
+            </div>
         </div>
     </div>
 </div>
