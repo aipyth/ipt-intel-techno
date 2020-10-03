@@ -119,3 +119,5 @@ GitHub.sublime-settings
 # Sass compiler #
 *.sassc
 
+# Docker #
+docker-compose-prod.yml

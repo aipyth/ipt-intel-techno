@@ -1,0 +1,22 @@
+version: "3.7"
+   
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    build: .
+    command: gunicorn ipt_techno_site.wsgi -b 0.0.0.0:8000
+    environment:
+      - ENVIRONMENT=development
+      - DEBUG=True
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+

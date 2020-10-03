@@ -11,6 +11,9 @@ pylint-django = "*"
 django = "*"
 django-summernote = "*"
 pillow = "*"
+whitenoise = "*"
+psycopg2-binary = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
