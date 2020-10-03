@@ -1,5 +1,28 @@
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin
+from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
+from django.conf import settings
 
+from .managers import CustomUserManager
+
+
+class CustomUser(AbstractBaseUser, PermissionsMixin):
+    firstname = models.CharField(max_length=128)
+    lastname = models.CharField(max_length=128)
+    email = models.EmailField(_('email field'), unique=True)
+    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    date_joined = models.DateTimeField(default=timezone.now)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    objects = CustomUserManager()
+
+    def __str__(self):
+        return self.email
 
 class ScientificDirector(models.Model):
     name = models.CharField(max_length=255)
@@ -18,7 +41,7 @@ class Section(models.Model):
 
 
 class Competitor(models.Model):
-    user_record = models.OneToOneField('auth.User', on_delete=models.CASCADE)
+    user_record = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     school = models.CharField(max_length=255)
     sc_director = models.ForeignKey(ScientificDirector,
                                     on_delete=models.SET_NULL, null=True)

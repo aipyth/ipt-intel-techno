@@ -2,12 +2,12 @@ from django.db import models
 from io import BytesIO
 from PIL import Image
 from django.core.files import File
+from django.conf import settings
 
 POST_STATUS = (
     (0,"Draft"),
     (1,"Publish")
 )
-
 
 def compress(image):
     "Image compression method"
@@ -20,7 +20,7 @@ def compress(image):
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey('auth.User', on_delete= models.CASCADE,related_name='blog_posts')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name='blog_posts', null=True)
     
     title_image = models.ImageField(upload_to='title_images/%Y/%m/%d/')
     content = models.TextField()
