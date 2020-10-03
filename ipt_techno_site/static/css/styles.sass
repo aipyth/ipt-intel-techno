@@ -427,13 +427,14 @@ $image-container-height: 150px
             height: $postcard-height
             margin: 10px 15px
             box-shadow: 0 0 10px rgba(200, 200, 200, 0.7)
-            // @media screen and (max-width: 900px)
-            //     max-width: 45%
-            //     // height: 200px
-            // @media screen and (max-width: 600px)
-            //     // max-width: 125px
-            //     max-width: 40%
-            //     // height: 80px
+            transition: transform 0.5s ease
+            @media screen and (max-width: 900px)
+                max-width: 45%
+                // height: 200px
+            @media screen and (max-width: 600px)
+                // max-width: 125px
+                max-width: 40%
+                // height: 80px
 
             .image-container
                 // width: $postcard-width
@@ -477,7 +478,8 @@ $image-container-height: 150px
                     font-size: 0.75rem
                     .author
                         color: $blue
-
+        .postcard:hover
+            transform: scale(1.04)
 
 
 
@@ -515,7 +517,7 @@ $image-container-height: 150px
         img
             height: 200px
 
-     footer
+    footer
         p 
             font-size: 70%
         .footer-logo
