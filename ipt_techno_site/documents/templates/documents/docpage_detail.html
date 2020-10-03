@@ -19,30 +19,18 @@
          <div class="col class static-main maincont">
             <div class="bord"></div>
                 <h1>{{ docpage.name }}</h1>
-
-<<<<<<< HEAD
                 <p>{{ docpage.text|safe }}</p>
     
                 {% for doc in docpage.files.all %}
                 <div class="downloadfiles_row">
                     <a href="{{ doc.upload.url }}"class="downloadlink">
                         <div class="downloadfile pdf">
-                            <span>{{ doc.name }}</span> 
+                            <span>{{ doc.name }}</span>
+                            <br> 
                             <span class="updated">Updated: {{ doc.date }}</span>
                         </div>
                         </a>
                  </div>
-=======
-    <h1>{{ docpage.name }}</h1>
-
-    <p>{{ docpage.text|safe }}</p>
-
-    {% for doc in docpage.files.all %}
-        <a href="{{ doc.upload.url }}">
-            <p>{{ doc.name }}</p>
-            <p>Updated: {{ doc.date|naturaltime }}</p>
-        </a>
->>>>>>> d0bc015fe721f0079cd5029795eb8a2f7ec58400
     {% endfor %}
          </div>
      </div>

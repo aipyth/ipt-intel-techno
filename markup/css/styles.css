@@ -265,15 +265,60 @@ a.user {
 
 footer {
   background-color: #1a54e7;
-  line-height: 1.3em;
-  color: rgba(254, 253, 255, 0.6);
+  color: rgba(254, 253, 255, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .footer-logo {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  -ms-flex-preferred-size: 12%;
+      flex-basis: 12%;
+  text-align: center;
+}
+
+footer .footer-logo img {
+  width: 100px;
+}
+
+footer .footertext1 {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  text-align: left;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+footer .footertext2 {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
 }
 
 footer p {
   font-style: "Noto Sans", sans-serif;
   white-space: nowrap;
   margin-bottom: 2px;
-  font-size: 15px;
+  font-size: 100%;
+  line-height: 1.5em;
 }
 
 .carousel-inner {
@@ -626,7 +671,10 @@ span.important {
     height: 200px;
   }
   footer p {
-    font-size: 13px;
+    font-size: 70%;
+  }
+  footer .footer-logo img {
+    width: 80px;
   }
   .maincont h1 {
     font-size: 200%;
@@ -690,14 +738,11 @@ span.important {
   .datetime {
     font-size: 0.4rem;
   }
-  footer .footertext {
-    margin-top: 4px !important;
-  }
   footer p {
-    font-size: 7px;
+    font-size: 45%;
   }
-  footer img {
-    width: 60px;
+  footer .footer-logo img {
+    width: 40px;
   }
   .maincont .col-lg-5 {
     border-bottom: none;

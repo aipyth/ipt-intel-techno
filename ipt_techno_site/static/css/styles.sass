@@ -230,13 +230,33 @@ a.user
 
 footer 
     background-color: rgb(26, 84, 231)
-    line-height: 1.3em
-    color: rgba(254, 253, 255, 0.6)
+    color: rgba(254, 253, 255, 0.8)
+    display: flex
+    flex-wrap: nowrap
+    justify-content: center
+    .footer-logo
+        order: 2
+        flex-basis: 12%
+        text-align: center
+        img
+            width: 100px
+    .footertext1 
+        order: 3
+        text-align: left
+        align-self: center
+        flex-basis: 30%
+    .footertext2
+        order: 1
+        text-align: center
+        align-self: center
+        flex-basis: 30%
     p 
         font-style:  "Noto Sans", sans-serif
         white-space: nowrap
         margin-bottom: 2px
-        font-size: 15px
+        font-size: 100%
+        line-height: 1.5em
+
 
 .carousel-inner
     max-height: 35vw
@@ -384,8 +404,8 @@ span.important
 
 
 // Post card on home screen
-// $postcard-width: 350px
-$postcard-width: 30%
+$postcard-width: 350px
+// $postcard-width: 30%
 $postcard-height: 300px
 $image-container-height: 150px
 .posts-container-ws
@@ -398,7 +418,7 @@ $image-container-height: 150px
         display: flex
         flex-direction: row
         flex-wrap: wrap
-        justify-content: space-around
+        justify-content: center
 
         .postcard
             display: flex
@@ -407,13 +427,13 @@ $image-container-height: 150px
             height: $postcard-height
             margin: 10px 15px
             box-shadow: 0 0 10px rgba(200, 200, 200, 0.7)
-            @media screen and (max-width: 900px)
-                max-width: 45%
-                // height: 200px
-            @media screen and (max-width: 600px)
-                // max-width: 125px
-                max-width: 40%
-                // height: 80px
+            // @media screen and (max-width: 900px)
+            //     max-width: 45%
+            //     // height: 200px
+            // @media screen and (max-width: 600px)
+            //     // max-width: 125px
+            //     max-width: 40%
+            //     // height: 80px
 
             .image-container
                 // width: $postcard-width
@@ -495,9 +515,12 @@ $image-container-height: 150px
         img
             height: 200px
 
-    footer
+     footer
         p 
-            font-size: 13px
+            font-size: 70%
+        .footer-logo
+            img
+                width: 80px
     
     .maincont
         h1
@@ -561,13 +584,11 @@ $image-container-height: 150px
     .datetime
         font-size: 0.4rem
     footer
-        .footertext
-            margin-top: 4px !important
         p 
-            font-size: 7px
-        img 
-            width: 60px
-
+            font-size: 45%
+        .footer-logo
+            img 
+                width: 40px
     .maincont
         .col-lg-5
             border-bottom: none
