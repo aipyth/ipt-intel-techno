@@ -28,10 +28,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '@*)+=(!+f)37br^)^u=&ny1$+g-k)%w7^ps)2
 DEBUG = os.environ.get('DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = [
-    '.amazonaws.com',
     'localhost',
     '127.0.0.1',
 ] + [os.environ.get('HOST')] if os.environ.get('HOST') else []
+
+ALLOWED_HOSTS += [os.environ.get('HOST_IP')] if os.environ.get('HOST_IP') else []
 
 
 # Application definition
