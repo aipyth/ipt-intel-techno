@@ -693,12 +693,14 @@ span.important {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 5px;
-  font-weight: 600;
-  font-size: 0.75rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 300;
+  font-size: 0.66rem;
 }
 
 .posts-container-ws .posts-container .postcard .caption .pub-date-author .author {
   color: #1a54e7;
+  font-weight: bold;
 }
 
 .posts-container-ws .posts-container .postcard:hover {
