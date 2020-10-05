@@ -24,14 +24,15 @@
     {% block header %}
     <header>
         <div class="logo pb-3">
-    
-                <img src="{% static "images/logo2.png" %}" alt="">
-                <!-- <img src="./images/logo1.png" alt=""> -->
-                <div class="logo-text">
-                    <span class="phys-tech"> Institute of physics and technologies</span>
-                    <br>
-                    <span class="int-tech">Intel - Techno</span>
-                </div>
+                <a href="{% url 'home' %}" id="header-link">
+                    <img src="{% static "images/logo2.png" %}" alt="">
+                    <!-- <img src="./images/logo1.png" alt=""> -->
+                    <div class="logo-text">
+                        <span class="phys-tech"> Institute of physics and technologies</span>
+                        <br>
+                        <span class="int-tech">Intel - Techno</span>
+                    </div>
+                 </a>
         </div>
         <div class="menu" id="header-menu">
             <span class="menu-item px-3">
