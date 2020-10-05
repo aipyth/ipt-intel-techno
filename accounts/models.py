@@ -22,7 +22,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     objects = CustomUserManager()
 
     def __str__(self):
-        return self.email
+        return f"{self.lastname} {self.firstname}"
 
 class ScientificDirector(models.Model):
     name = models.CharField(max_length=255)

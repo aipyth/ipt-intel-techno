@@ -119,6 +119,10 @@ GitHub.sublime-settings
 # Sass compiler #
 *.sassc
 
+# we need to remve statifiles folder
+# static files collecting is run on the server
+staticfiles/
+
 # Docker #
 docker-compose-prod.yml
 
