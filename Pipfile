@@ -4,8 +4,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pylint = "*"
-pylint-django = "*"
 
 [packages]
 django = "*"
@@ -14,6 +12,9 @@ pillow = "*"
 whitenoise = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
+boto3 = "*"
+django-storages = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.8"

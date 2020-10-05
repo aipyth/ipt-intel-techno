@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,9 +31,10 @@ DEBUG = os.environ.get('DEBUG', '') != 'False'
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-] + [os.environ.get('HOST')] if os.environ.get('HOST') else []
-
-ALLOWED_HOSTS += [os.environ.get('HOST_IP')] if os.environ.get('HOST_IP') else []
+    '0.0.0.0',
+    os.environ.get('HOST'),
+    os.environ.get('HOST_IP'),
+]
 
 
 # Application definition
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
 
+    'storages',
     'django_summernote',
 
     'accounts',
@@ -154,6 +157,24 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
+
+# Amazon S3 Conf
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+AWS_LOCATION = 'static'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+
+DEFAULT_FILE_STORAGE = 'ipt_techno_site.storage_backends.MediaStorage'
+
+
 # Custom User
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -177,3 +198,5 @@ if os.environ.get('STATE') == 'stagging':
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
+django_heroku.settings(locals())

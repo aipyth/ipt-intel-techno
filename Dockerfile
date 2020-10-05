@@ -5,7 +5,7 @@ EXPOSE 8000
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE 1
 
-WORKDIR /code/ipt_techno_site
+WORKDIR /code
 
 COPY Pipfile Pipfile.lock /code/
 

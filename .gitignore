@@ -121,3 +121,6 @@ GitHub.sublime-settings
 
 # Docker #
 docker-compose-prod.yml
+
+# env vars
+.env.sh
