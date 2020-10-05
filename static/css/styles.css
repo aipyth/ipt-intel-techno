@@ -274,24 +274,25 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 20px 0;
 }
 
 footer .footer-logo {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
-  -ms-flex-preferred-size: 12%;
-      flex-basis: 12%;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
   text-align: center;
 }
 
 footer .footer-logo img {
-  width: 100px;
+  width: 90   px;
 }
 
 footer .footertext1 {
@@ -302,8 +303,8 @@ footer .footertext1 {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
+  width: 30%;
+  font-size: 1.3em;
 }
 
 footer .footertext2 {
@@ -314,8 +315,7 @@ footer .footertext2 {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
+  width: 30%;
 }
 
 footer p {
@@ -611,7 +611,7 @@ span.important {
           flex-direction: column;
   max-width: 350px;
   height: 300px;
-  margin: 10px 15px;
+  margin: 10px 10px;
   -webkit-box-shadow: 0 0 10px rgba(200, 200, 200, 0.7);
           box-shadow: 0 0 10px rgba(200, 200, 200, 0.7);
   -webkit-transition: -webkit-transform 0.5s ease;
@@ -620,15 +620,21 @@ span.important {
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   .posts-container-ws .posts-container .postcard {
-    max-width: 45%;
+    max-width: 250px;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .posts-container-ws .posts-container .postcard {
-    max-width: 90%;
+    max-width: 230px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .posts-container-ws .posts-container .postcard {
+    max-width: 300px;
   }
 }
 
@@ -741,7 +747,7 @@ span.important {
     font-size: 70%;
   }
   footer .footer-logo img {
-    width: 80px;
+    width: 70px;
   }
   .maincont h1 {
     font-size: 200%;
@@ -764,12 +770,27 @@ span.important {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 650px) {
+  footer p {
+    font-size: 60%;
+  }
+  footer .footertext2 p {
+    font-size: 47%;
+  }
+  footer .footer-logo img {
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
   .logo-text {
     font-size: 20px;
   }
+  .navbar-brand {
+    margin-right: 0;
+  }
   .navbar-brand img {
-    max-width: 60px;
+    max-width: 70px;
     margin-right: -10px;
   }
   .phys-tech {
@@ -805,11 +826,29 @@ span.important {
   .datetime {
     font-size: 0.4rem;
   }
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .footertext1 {
+    text-align: center;
+    margin-top: 15px;
+    width: 300px;
+  }
+  footer .footertext2 {
+    margin-bottom: 15px;
+    width: 300px;
+  }
+  footer .footertext2 p {
+    font-size: 60%;
+  }
   footer p {
-    font-size: 45%;
+    font-size: 60%;
   }
   footer .footer-logo img {
-    width: 40px;
+    width: 60px;
   }
   .maincont .col-lg-5 {
     border-bottom: none;

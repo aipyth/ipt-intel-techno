@@ -26,13 +26,14 @@
         <div class="logo pb-3">
                 <a href="{% url 'home' %}" id="header-link">
                     <img src="{% static "images/logo2.png" %}" alt="">
-                    <!-- <img src="./images/logo1.png" alt=""> -->
+                </a>
+                <a href="{% url 'home' %}" id="header-link">
                     <div class="logo-text">
                         <span class="phys-tech"> Institute of physics and technologies</span>
                         <br>
                         <span class="int-tech">Intel - Techno</span>
                     </div>
-                 </a>
+                </a>
         </div>
         <div class="menu" id="header-menu">
             <span class="menu-item px-3">
@@ -53,12 +54,16 @@
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <!-- Brand -->
             <div class="navbar-brand" href="#">
+                <a href="{% url 'home' %}" id="header-link">
                 <img src="{% static "images/logo2.png" %}" alt="">
+            </a>
+            <a href="{% url 'home' %}" id="header-link">
                 <div class="logo-text">
                     <span class="phys-tech"> Institute of physics and technologies</span>
                     <br>
                     <span class="int-tech">Intel - Techno</span>
                 </div>
+            </a>
             </div>
 
             <!-- Toggler/collapsibe Button -->
@@ -96,7 +101,7 @@
     {% block footer %}
     <footer class="container-footer">
         <div class="footer-logo">
-          <img src="file:///C:/Users/Den/source/repos/intelTehno/ipt-intel-techno/markup/images/logo.png" alt="" class="flotat-left" width="80px">
+          <img src="{% static "images/logo1.png" %}" alt="" class="flotat-left" width="80px">
         </div>
         <div class="footertext1">
           <p>Фiзико-технiчний інститут</p>

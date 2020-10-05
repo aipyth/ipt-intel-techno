@@ -236,24 +236,26 @@ footer
     background-color: rgb(26, 84, 231)
     color: rgba(254, 253, 255, 0.8)
     display: flex
-    flex-wrap: nowrap
+    flex-wrap: wrap
     justify-content: center
+    padding: 20px 0
     .footer-logo
         order: 2
-        flex-basis: 12%
+        flex-basis: 20%
         text-align: center
         img
-            width: 100px
+            width: 90   px
     .footertext1 
         order: 3
         text-align: left
         align-self: center
-        flex-basis: 30%
+        width: 30%
+        font-size: 1.3em
     .footertext2
         order: 1
         text-align: center
         align-self: center
-        flex-basis: 30%
+        width: 30%
     p 
         font-style:  "Noto Sans", sans-serif
         white-space: nowrap
@@ -440,8 +442,9 @@ span.important
 
 // Post card on home screen
 $postcard-width: 350px
-$postcard-width-600: 90%
-$postcard-width-900: 45%
+$postcard-width-650: 230px
+$postcard-width-950: 250px
+$postcard-width-500: 300px
 $postcard-height: 300px
 $image-container-height: 150px
 .posts-container-ws
@@ -462,13 +465,15 @@ $image-container-height: 150px
             flex-direction: column
             max-width: $postcard-width
             height: $postcard-height
-            margin: 10px 15px
+            margin: 10px 10px
             box-shadow: 0 0 10px rgba(200, 200, 200, 0.7)
             transition: transform 0.5s ease
-            @media screen and (max-width: 900px)
-                max-width: $postcard-width-900
-            @media screen and (max-width: 600px)
-                max-width: $postcard-width-600
+            @media screen and (max-width: 950px)
+                max-width: $postcard-width-950
+            @media screen and (max-width: 650px)
+                max-width: $postcard-width-650
+            @media screen and (max-width: 500px)
+                max-width: $postcard-width-500
 
             .image-container
                 width: 100%
@@ -553,8 +558,10 @@ $image-container-height: 150px
             font-size: 70%
         .footer-logo
             img
-                width: 80px
+                width: 70px
     
+    .postcard
+
     .maincont
         h1
             font-size: 200%
@@ -571,14 +578,25 @@ $image-container-height: 150px
             p
                 font-size: 90%
 
-@media screen and (max-width: 450px)  
+@media screen and (max-width: 650px)
+     footer
+        p 
+            font-size: 60%
+        .footertext2
+            p
+                font-size: 47%
+        .footer-logo
+            img
+                width: 50px
+@media screen and (max-width: 500px)  
 
     .logo-text
         font-size: 20px
    
-
+    .navbar-brand
+        margin-right: 0
     .navbar-brand img 
-        max-width: 60px
+        max-width: 70px
         margin-right: -10px
    
 
@@ -617,11 +635,21 @@ $image-container-height: 150px
     .datetime
         font-size: 0.4rem
     footer
+        flex-direction: column
+        .footertext1
+            text-align: center
+            margin-top: 15px
+            width: 300px
+        .footertext2
+            p
+                font-size: 60%
+            margin-bottom: 15px
+            width: 300px
         p 
-            font-size: 45%
+            font-size: 60%
         .footer-logo
             img 
-                width: 40px
+                width: 60px
     .maincont
         .col-lg-5
             border-bottom: none
