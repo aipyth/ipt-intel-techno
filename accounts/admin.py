@@ -10,11 +10,11 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     model = CustomUser
     list_display = ('email', 'is_staff', 'is_active')
-    list_filter = ('email', 'is_staff', 'is_active')
+    list_filter = ('is_staff', 'is_active')
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Personal info', {'fields': ('firstname', 'lastname')}),
-        ('Permissions', {'fields': ('is_active', 'is_staff',)}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
     )
     add_fieldsets = (
         (None, {
@@ -25,14 +25,16 @@ class CustomUserAdmin(UserAdmin):
     search_fields = ('email',)
     ordering = ('email',)
 
-    def get_fieldsets(self, request, obj=None):
-        if request.user.is_superuser:
-            return (
-                        (None, {'fields': ('email', 'password')}),
-                        ('Personal info', {'fields': ('firstname', 'lastname')}),
-                        ('Permissions', {'fields': ('is_active', 'is_staff',    'is_superuser', 'groups', 'user_permissions')}),
-                    )
-        return self.fieldsets
+    def get_readonly_fields(self, request, obj=None):
+        if not request.user.is_superuser:
+            return ('is_staff', 'is_active', 'is_superuser', 'groups', 'user_permissions')
+        return ()
+        #     return (
+        #                 (None, {'fields': ('email', 'password')}),
+        #                 ('Personal info', {'fields': ('firstname', 'lastname')}),
+        #                 ('Permissions', {'fields': ('is_active', 'is_staff',    'is_superuser', 'groups', 'user_permissions')}),
+        #             )
+        # return self.fieldsets
 
 # admin.site.register(models.Section)
 # admin.site.register(models.ScientificDirector)
