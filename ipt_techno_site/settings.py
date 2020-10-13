@@ -40,6 +40,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'scout_apm.django',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,6 +138,12 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# Scout settings
+SCOUT_MONITOR = True
+SCOUT_KEY = os.environ.get("SCOUT_KEY")
+SCOUT_NAME = "IPT-ISEF-Techno"
 
 
 # Static files (CSS, JavaScript, Images)
