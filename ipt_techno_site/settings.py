@@ -197,3 +197,7 @@ if os.environ.get('STATE') == 'stagging':
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
+if os.environ.get('USE_HEROKU_POSTGRES') != 'False':
+    import django_heroku
+    django_heroku.settings(locals())
