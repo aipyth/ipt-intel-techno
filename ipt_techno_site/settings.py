@@ -214,6 +214,10 @@ if os.environ.get('USE_HEROKU_POSTGRES') != 'False':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ.get('DATABASE_URL'),
+            'NAME': os.environ.get('HEROKU_PSQL_NAME'),
+            'HOST': os.environ.get('HEROKU_PSQL_HOST'),
+            'USER': os.environ.get('HEROKU_PSQL_USER'),
+            'PASSWORD': os.environ.get('HEROKU_PSQL_PASSWORD'),
+            'PORT': os.environ.get('HEROKU_PSQL_PORT'),
         }
     }
