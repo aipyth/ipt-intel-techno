@@ -209,5 +209,11 @@ if os.environ.get('STATE') == 'stagging':
     }
 
 if os.environ.get('USE_HEROKU_POSTGRES') != 'False':
-    import django_heroku
-    django_heroku.settings(locals())
+    # import django_heroku
+    # django_heroku.settings(locals())
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('DATABASE_URL'),
+        }
+    }
