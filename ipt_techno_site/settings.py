@@ -141,9 +141,10 @@ USE_TZ = True
 
 
 # Scout settings
-SCOUT_MONITOR = True
-SCOUT_KEY = os.environ.get("SCOUT_KEY")
-SCOUT_NAME = "IPT-ISEF-Techno"
+if ENVIRONMENT == 'production':
+    SCOUT_MONITOR = True
+    SCOUT_KEY = os.environ.get("SCOUT_KEY")
+    SCOUT_NAME = "IPT-ISEF-Techno"
 
 
 # Static files (CSS, JavaScript, Images)
@@ -206,6 +207,7 @@ else:
     SECURE_HSTS_SECONDS             = None
     SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
     SECURE_FRAME_DENY               = False
+    DATABASES['default']['HOST'] = 'db'
 
 if os.environ.get('STATE') == 'stagging':
     DATABASES = {
