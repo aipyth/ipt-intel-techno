@@ -34,6 +34,6 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Change admin page info
-admin.site.site_header = "IntelTechno Admin"
-admin.site.site_title = "IntelTechno Admin Portal"
-admin.site.index_title = "Welcome to IntelTechno Admin Page"
+admin.site.site_header = "Eco-Techno Admin"
+admin.site.site_title = "Eco-Techno Admin Portal"
+admin.site.index_title = "Welcome to Eco-Techno Admin Page"
