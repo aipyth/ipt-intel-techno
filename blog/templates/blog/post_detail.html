@@ -1,20 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
+{% comment %} <div class="col-12 bg-light" style="border-bottom: 1px solid rgb(245, 226, 214);">
+  {% endcomment %}
+{% comment %} <div class="container">
   <div class="row">
     <div class="col maincont">
       <div class="row">
-        {% comment %} <div class="col-12 bg-light" style="border-bottom: 1px solid rgb(245, 226, 214);">
-          {% endcomment %}
           <div class="post-title" style="background-image: url({{ post.title_image.url }});">
             <div class="darken-image">
               <h1>{{ post.title }}</h1>
             </div>
           </div>
         </div>
-        {% comment %}
-      </div> {% endcomment %}
         <div class="row">
           <div class="content">
             {{ post.content|safe }}
@@ -25,7 +23,6 @@
           <div class="author float-left">
             <span class=" float-left">{{ post.author }}</span>
             <br>
-            {% comment %} <span class="author-caption float-right">My rang and proffesion</span> {% endcomment %}
           </div>
         </div>
         <div class="maincont-footer col topandbottom bg-light" style="border-top: 1px solid rgb(245, 226, 214);">
@@ -37,7 +34,26 @@
     </div>
   </div>
 </div>
+</div> {% endcomment %}
+
+<div class="post-container">
+  <div class="post-title" style="background-image: url({{ post.title_image.url }});">
+    <div class="darken-image">
+      <h1>{{ post.title }}</h1>
+    </div>
+  </div>
+
+  <div class="content">
+    {{ post.content|safe }}
+
+    <div class="author-date">
+      <p>{{ post.author }}</p>
+      <p>{{ post.created_on }}</p>
+    </div>
+  </div>
+    
 </div>
+  
 
 
 <div class="bord mt-2">

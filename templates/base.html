@@ -11,11 +11,13 @@
     {% if title %}
     <title> {{ title }}</title>
     {% else %}
-    <title>Intel-Techno</title>
+    <title>Eco-Techno</title>
     {% endif %}
     <link rel="stylesheet" href="{% static "css/normalize.css" %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/flaticon.css" %}"> 
 
 </head>
 
@@ -36,9 +38,6 @@
                 </a>
         </div>
         <div class="menu" id="header-menu">
-            <span class="menu-item px-3">
-                <a href="{% url 'home' %}">Додому</a>
-            </span>
             <span class="menu-item px-3">
                 <a href="{% url 'post_list' %}">Блог</a>
             </span>
@@ -75,9 +74,6 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" id="navitem" href="{% url 'home' %}">Додому</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" id="navitem" href="{% url 'post_list' %}">Блог</a>
                     </li>
 
@@ -99,18 +95,25 @@
     </div>
 
     {% block footer %}
+    <div class="social-links-container">
+        <a href="https://t.me/joinchat/AAAAAFVUyKtlBps9pNvJaQ" target="_blank"><img src="{% static "images/social-logo/089-telegram.svg" %}" alt=""></a>
+        <a href="https://t.me/eko_tech_Ukraine2021" target="_blank"><img src="{% static "images/social-logo/090-telegram.svg" %}" alt=""></a>
+        <a href="https://www.facebook.com/groups/1437429776451672/?ref=share" target="_blank"><img src="{% static "images/social-logo/024-facebook.svg" %}" alt=""></a>
+        <a href="https://instagram.com/eco_techno2021?igshid=150rn1sygy17i" target="_blank"><img src="{% static "images/social-logo/044-instagram.svg" %}" alt=""></a>
+    </div>
     <footer class="container-footer">
         <div class="footer-logo">
-          <img src="{% static "images/logo1.png" %}" alt="" class="flotat-left" width="80px">
+          <img src="{% static "images/logo1.png" %}" alt="">
         </div>
         <div class="footertext1">
           <p>Фiзико-технiчний інститут</p>
-          <p>Intel-Техно Україна</p>
+          <p>Еко-Техно Україна</p>
         </div>
         <div class="footertext2">
-          <p>Адреса: 03056, Київ, пр.Перемоги, 37, НТУУ "КПI"</p>
-          <p>Контакти: тел. 236-70-98, 454-98-75;</p>
-          <p>E-mail: ipt.kpi.ua@gmail.com</p>
+          {% comment %}<p>Адреса: 03056, Київ, пр.Перемоги, 37, НТУУ "КПI"</p>
+          <p>Контакти: тел. 236-70-98, 454-98-75;</p> {% endcomment %}
+          <p><a href="mailto:ipt.kpi.ua@gmail.com">ipt.kpi.ua@gmail.com</a></p>
+          <p><a href="mailto:technoipt2021@gmail.com">technoipt2021@gmail.com</a></p>
         </div>
       </div>
     </div>

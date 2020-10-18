@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;500;600;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
 $blue: rgb(26, 84, 231)
 $black: rgb(51, 51, 51)
 $navy: #55c1ff
@@ -64,7 +67,7 @@ header
 
 .logo-text 
     font-family: 'Raleway', sans-serif
-    font-weight: bold
+    font-weight: 400
     font-size: 26px
     color: #fefdff
     margin: 0 15px
@@ -79,30 +82,40 @@ header .menu
     justify-content: center
 
 
-.menu .menu-item a 
-    height: 100%
-    display: inline-block
-    text-align: center
-    padding: 20 15
-    font-family: 'Noto Sans', sans-serif
-    font-size: 20px
-    font-weight: 400
-    text-decoration: none
+.menu .menu-item
+    // background: linear-gradient(to left, white 50%, #1a54e7 50%) right
+    // background-size: 200%
+    // transition: .5s ease-out
     color: #1a54e7
 
-    transition: border 0.5s ease
+    a 
+        height: 100%
+        display: inline-block
+        text-align: center
+        padding: 20 15
+        font-family: 'Raleway', sans-serif
+        font-size: 20px
+        font-weight: 600
+        text-decoration: none
+        
+        transition: border 0.5s ease
 
-    box-sizing: border-box
-    -moz-box-sizing: border-box
-    -webkit-box-sizing: border-box
+        box-sizing: border-box
+        -moz-box-sizing: border-box
+        -webkit-box-sizing: border-box
+
 
 
 .menu .menu-item:first-child 
-    margin-left: 80px
+    margin-left: 60px
 
+.menu .menu-item:hover
+    background-position: left
+    color: white
 
 .menu .menu-item a:hover 
     border-bottom: 5px solid #1a54e7
+    // background-position: left
 
 
 .menu-btn 
@@ -186,7 +199,7 @@ button.click-me
 .bord
     margin: 0 auto
     border-radius: 28%
-    margin-top: 3em
+    margin-top: 1.5em
     margin-bottom: 1em
     border-bottom: 4px solid $blue
     max-width: 150px
@@ -231,6 +244,27 @@ figure.figure:active
 a.user 
     font-size: 0.6rem
 
+// SOCIAL LINKS //
+.social-links-container
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 40px
+    background-color: #0099ff73
+    a
+        display: flex
+        margin: 10px
+        color: $white
+        font-size: 2rem
+        transition: .4s ease
+
+        img 
+            width: 30px
+            height: 30px
+            transition: .4s ease
+        img:hover
+            transform: scale(1.2)
+
 // FOOTER //
 footer 
     background-color: rgb(26, 84, 231)
@@ -240,28 +274,41 @@ footer
     justify-content: center
     padding: 20px 0
     .footer-logo
+        display: flex
         order: 2
         flex-basis: 20%
-        text-align: center
+        justify-content: center
+        align-items: center
         img
-            width: 90   px
+            display: flex
+            width: 80px
     .footertext1 
         order: 3
         text-align: left
         align-self: center
         width: 30%
-        font-size: 1.3em
+        font-size: 1.2em
     .footertext2
         order: 1
-        text-align: center
+        text-align: right
         align-self: center
         width: 30%
+        font-size: 1.1em
     p 
-        font-style:  "Noto Sans", sans-serif
+        font-family: 'Raleway', sans-serif
+        font-weight: 500
         white-space: nowrap
         margin-bottom: 2px
         font-size: 100%
         line-height: 1.5em
+        a
+            color: rgba(254, 253, 255, 0.8)
+            transition: all 0.5s ease
+        a:hover
+            color: rgba(254, 253, 255, 0.68)
+            font-size: 1.05em
+            text-decoration: none
+            
 
 // CAROUSEL //
 .carousel-inner
@@ -326,7 +373,7 @@ span.important
         border-top-right-radius: 20px
         max-width: 40%
         margin-top: 1em
-        margin-left: -1em
+        margin-left: -2em
         padding-right: 3em
         background-image: url('../images/blank-profile.png')
         background-repeat: no-repeat
@@ -348,6 +395,7 @@ span.important
         margin-top: -8px
         overflow: wrap
         overflow-wrap: anywhere
+        font-family: 'Ubuntu', sans-serif
     .post-title
         height: 30vh
         width: 100%
@@ -362,9 +410,13 @@ span.important
             align-items: center
             h1
                 display: flex
+                text-align: center
+                font-family: 'Open Sans', sans-serif
+                font-weight: 600
                 color: $white
-                font-size: 2em
+                font-size: 1.75em
                 text-shadow: 0 0 15px #000
+                padding: 10px 10px
     .maincont-footer
         color: rgba(189, 137, 126, 0.5)
         padding-top: 25px
@@ -373,6 +425,77 @@ span.important
         float: right
     .topandbottom
         z-index: -1
+
+
+.post-container
+    display: flex
+    flex-flow: column nowrap
+    align-items: center
+    width: 100%
+
+    .post-title
+        height: 55vh
+        width: 100%
+        background-size: cover
+        background-color: black
+        .darken-image
+            width: 100%
+            height: 100%
+            background-color: rgba(0, 0, 0, 0.4)
+            background-attachment: fixed
+            display: flex
+            justify-content: center
+            align-items: center
+            h1
+                display: flex
+                text-align: center
+                font-family: 'Open Sans', sans-serif
+                font-weight: 600
+                color: $white
+                font-size: 1.75em
+                text-shadow: 0 0 15px #000
+                padding: 10px 10px
+    
+    .content
+        width: 60vw
+        @media screen and (max-width: 1600px)
+            width: 70vw
+        @media screen and (max-width: 1400px)
+            width: 75vw
+        @media screen and (max-width: 1200px)
+            width: 80vw
+        @media screen and (max-width: 1000px)
+            width: 90vw
+        font-family: 'Ubuntu', sans-serif
+        overflow: wrap
+        overflow-wrap: anywhere
+        color: black
+        // box-shadow: 0 0 10px rgba(200, 200, 200, 0.5)   
+        border-left: 4px solid $blue
+        border-right: 4px solid $blue
+        padding: 5px 20px
+        margin: 10px 0
+        @media screen and (max-width: 700px)
+            border: none
+            padding: 5px 0px
+        h1, h2, h3, h4, h5, h6, p
+            font-family: 'Ubuntu', sans-serif
+            line-height: 1.5em
+            font-weight: 300
+        img
+            display: block
+            margin: 15px auto
+            max-width: 80vw
+    
+    .author-date
+        color: rgba(0, 0, 0, 0.65)
+        display: flex
+        flex-flow: row nowrap
+        justify-content: space-between
+        margin-top: 20px
+        p
+            font-family: 'Raleway', sans-serif
+            font-weight: 400
     
 
 
@@ -639,13 +762,16 @@ $image-container-height: 180px
     footer
         flex-direction: column
         .footertext1
+            order: 1
             text-align: center
-            margin-top: 15px
+            margin-bottom: 15px
             width: 300px
         .footertext2
+            order: 3
+            text-align: center
             p
                 font-size: 60%
-            margin-bottom: 15px
+            margin-top: 15px
             width: 300px
         p 
             font-size: 60%
