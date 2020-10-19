@@ -170,6 +170,9 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+# Cache control
+CACHE_CONTROL_MAX_AGE = 3600
+
 # For Production
 if ENVIRONMENT == 'production':
     SECURE_BROWSER_XSS_FILTER = True
