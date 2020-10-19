@@ -6,7 +6,7 @@
 
 {% if slider_posts %}
 
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
 
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -23,20 +23,24 @@
         </div> -->
 
         <div class="carousel-item active">
+        <div class="img-block">
             <img src="{{ slider_posts.0.image.url }}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
                 <h5>{{ slider_posts.0.title }}</h5>
                 <p>{{ slider_posts.0.text }}</p>
             </div>
         </div>
+        </div>
 
         {% for post in slider_posts|slice:"1:" %}
         <div class="carousel-item">
+            <div class="img-block">
             <img src="{{ post.image.url }}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
                 <h5>{{ post.title }}</h5>
                 <p>{{ post.text }}</p>
             </div>
+        </div>
         </div>
         {% endfor %}
 
