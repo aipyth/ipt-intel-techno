@@ -82,7 +82,7 @@ header #header-link {
 }
 
 header .menu {
-  margin-top: 20px;
+  margin-top: 13px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,7 +151,6 @@ header .menu {
 
 nav.navbar {
   background-color: #1a54e7 !important;
-  min-height: 13vh;
 }
 
 #navitem {
