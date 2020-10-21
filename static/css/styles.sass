@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;500;600;700&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400   700&family=PT+Serif:ital,wght@0,400   0,700   1,400&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200   500   600   700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300   400   600   700&display=swap')   
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300   400   500   700&display=swap')   
 
 $blue: rgb(26, 84, 231)
 $black: rgb(51, 51, 51)
@@ -71,6 +71,7 @@ header
     font-size: 26px
     color: #fefdff
     margin: 0 15px
+    margin-top: -5px
     white-space: nowrap
     line-height: 1em
 
@@ -249,19 +250,24 @@ a.user
     display: flex
     justify-content: center
     align-items: center
-    min-height: 40px
-    background-color: #0099ff73
+    padding: 5px 0
+    background: rgb(26,84,231)
     a
         display: flex
-        margin: 10px
+        padding: 12px 15px
+        margin-right: 10px
         color: $white
         font-size: 2rem
         transition: .4s ease
+        background: rgb(58,160,219)
+        background: radial-gradient(circle, #57b8f094 0%, rgba(26,84,231,1) 60%)
 
         img 
-            width: 30px
-            height: 30px
+            width: 25px
+            height: 25px
             transition: .4s ease
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(256deg) brightness(104%) contrast(101%)
+            opacity: 0.85
         img:hover
             transform: scale(1.2)
 
@@ -273,6 +279,7 @@ footer
     flex-wrap: wrap
     justify-content: center
     padding: 20px 0
+    margin-top: -10px
     .footer-logo
         display: flex
         order: 2
@@ -314,18 +321,34 @@ footer
 .carousel-inner
     max-height: 35vw
     background-color: black
-
-    .carousel-caption
-        top: 15vw
-        @media screen and (max-width: 700px)
-            top: 8vw
-        @media screen and (max-width: 500px)
-            top: 0
-
-
-    img
-        opacity: 0.5
-
+    overflow: hidden
+    display: flex !important
+    align-items: center
+    .img-block
+        display: flex !important
+        align-items: center
+        justify-content: center
+        img
+            opacity: 0.5
+            margin: auto auto !important
+        .carousel-caption
+            display: flex !important
+            justify-content: center
+            flex-flow: column
+            bottom: auto !important
+    @media screen and (max-width: 700px)
+        min-height: 45vh
+        img 
+            width: auto !important
+            min-height: 45vh
+            max-width: 700px !important
+    @media screen and (max-width: 450px)
+        min-height: 50vh
+        img 
+            width: auto !important
+            min-height: 50vh !important
+            max-width: 700px !important
+        
     .carousel-indicators
         margin-bottom: 0
 
@@ -337,6 +360,27 @@ footer
         position: absolute
         top: 15vw
         z-index: 0
+
+.carousel-fade .carousel-inner .carousel-item  
+    opacity: 0   
+    -webkit-transition-property: opacity   
+    -moz-transition-property: opacity   
+    -o-transition-property: opacity   
+    transition: opacity 1s ease !important 
+  
+.carousel-fade .carousel-inner .active  
+    opacity: 1
+  
+.carousel-fade .carousel-inner .active.left, .carousel-fade .carousel-inner .active.right  
+    left: 0   
+    opacity: 0   
+    z-index: 1   
+  
+.carousel-fade .carousel-inner .next.left, .carousel-fade .carousel-inner .prev.right  
+    opacity: 0.5 
+  
+.carousel-fade .carousel-control  
+  z-index: 2   
 
 // PAge styles
 
@@ -798,3 +842,8 @@ $image-container-height: 180px
                 font-size: 90%
     .thirdcol
         display: none
+
+@media screen and (max-width: 350px) 
+    .logo-text
+        font-size: 15px
+        margin-top: 0px
