@@ -32,7 +32,6 @@ header {
   background-color: #fefdff;
   width: 100%;
   z-index: 3;
-  min-height: 13vh;
   -webkit-box-shadow: 0 0 10px #c8c8c8;
           box-shadow: 0 0 10px #c8c8c8;
 }
@@ -1051,9 +1050,11 @@ footer p a:hover {
   }
   .dopcont .dopcontr {
     margin-left: 0;
+    border-width: 4px;
   }
   .dopcont .dopcontl {
     margin-right: 0;
+    border-width: 4px;
   }
   .bord {
     max-width: 70px;
