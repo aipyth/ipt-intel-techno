@@ -27,7 +27,7 @@ doc.date -- дата последней загрузки
                 <a href="{{ doc.upload.url }}" class="downloadfile">
                     {% comment %} <div class="downloadfile"> {% endcomment %}
                         <h6>{{ doc.name }}</h6>
-                        <p class="updated">Updated: {{ doc.date|naturaltime }}</p>
+                        <p class="updated">Оновлено: {{ doc.date|naturaltime }}</p>
                     {% comment %} </div> {% endcomment %}
                 </a>
             {% endfor %}
