@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400   700&family=PT+Serif:ital,wght@0,400   0,700   1,400&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200   500   600   700&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300   400   600   700&display=swap')   
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300   400   500   700&display=swap')   
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300   400   600   700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,400&display=swap');
 
 $blue: rgb(26, 84, 231)
 $black: rgb(51, 51, 51)
@@ -17,13 +17,13 @@ body
     color: #fefefe
     font-family: "Noto Sans", sans-serif
     background-color: $white
- 
-    p 
+
+    p
         font-family: "PT Serif", serif
         line-height: 1rem
         font-size: 1.1rem
 
-span 
+span
     line-height: 1rem
     color: rgb(51, 51, 51)
 
@@ -32,12 +32,13 @@ span
 
 // header + logo
 
-header 
+header
     display: flex
     background-color: $white
     width: 100%
     z-index: 3
-    span 
+    min-height: 13vh
+    span
         color: $white
     box-shadow: 0 0 10px rgba(200, 200, 200, 1)
     #header-link
@@ -45,7 +46,7 @@ header
         color: $white
 
 
-.logo 
+.logo
     width: 40%
     display: flex
     justify-content: flex-end
@@ -54,7 +55,7 @@ header
     background-color: #1a54e7
 
 
-.logo img 
+.logo img
     max-width: 100px
     max-height: 55px
 
@@ -65,7 +66,7 @@ header
     max-height: 50px
 
 
-.logo-text 
+.logo-text
     font-family: 'Raleway', sans-serif
     font-weight: 400
     font-size: 26px
@@ -76,8 +77,8 @@ header
     line-height: 1em
 
 
-header .menu 
-    margin-top: 30px
+header .menu
+    margin-top: 20px
     display: flex
     flex-direction: row
     justify-content: center
@@ -89,16 +90,16 @@ header .menu
     // transition: .5s ease-out
     color: #1a54e7
 
-    a 
+    a
         height: 100%
         display: inline-block
         text-align: center
-        padding: 20 15
+        padding: 20px 15px
         font-family: 'Raleway', sans-serif
         font-size: 20px
         font-weight: 600
         text-decoration: none
-        
+
         transition: border 0.5s ease
 
         box-sizing: border-box
@@ -107,23 +108,23 @@ header .menu
 
 
 
-.menu .menu-item:first-child 
+.menu .menu-item:first-child
     margin-left: 60px
 
 .menu .menu-item:hover
     background-position: left
     color: white
 
-.menu .menu-item a:hover 
+.menu .menu-item a:hover
     border-bottom: 5px solid #1a54e7
     // background-position: left
 
 
-.menu-btn 
+.menu-btn
     display: none
 
 
-.menu-icon 
+.menu-icon
     display: none
     content: ' '
     height: 30px
@@ -142,6 +143,7 @@ header .menu
 
 nav.navbar
     background-color: #1a54e7 !important
+    min-height: 13vh
 
 
 #navitem
@@ -152,172 +154,8 @@ nav.navbar
 .phys-tech
     font-size: 12px
 
-// dop content
+//Caru
 
-.dopcont 
-    padding: 10px
-    img
-        width: 200px
-    h2
-        padding: 0 15px
-        color: $blue
-    .caption
-        padding-left: 10px
-        padding-right: 10px
-    p.caption 
-        font-family: "PT Serif", serif
-        font-size: 22px
-        line-height: 1.7rem
-        text-align: justify
-        color: #333333
-
-.dopcontr
-    border-radius: 2px
-    border-left: 1.5px solid  #1a54e7
-    
-
-.dopcontl
-    border-radius: 2px
-    border-right: 1.5px solid  #1a54e7
-    
-    h2
-        text-align: right
-        white-space: nowrap
-
-
-button.click-me
-    display: block
-    margin: 10px auto !important
-    color: $white
-    background-color: $blue
-    border-color: $blue
-    letter-spacing: 1px
-    font-family: 'Raleway'
-    font-size: 23px
-    font-weight: bold
-    
-// blue line
-.bord
-    margin: 0 auto
-    border-radius: 28%
-    margin-top: 1.5em
-    margin-bottom: 1em
-    border-bottom: 4px solid $blue
-    max-width: 150px
-
-// main blocks 3x3
-#figlnk:hover
-    text-decoration: none
-
-.figure 
-    background-color: #fefdff
-    box-shadow: 0 0 10px rgba(200, 200, 200, 0.7)
-    margin: 13px 10px
-    transition: margin 0.4s ease
-    width: 100%
-    position: relative
-    overflow: hidden
-    .flex
-        display: flex
-        justify-content: center
-    figcaption
-        padding: 5px
-        font-family: "PT Serif", serif
-        line-height: 1rem
-        color: rgb(51, 51, 51)
-    img
-        display: block
-        margin: 0 auto
-        position: relative
-        height: 250px
-
-figure.figure:hover
-    margin: 6px 8px
-
-figure.figure:active
-    margin: 6px 8px
-
-.datetime 
-    padding-left: 5px
-    font-size: 0.8em
-
-
-a.user 
-    font-size: 0.6rem
-
-// SOCIAL LINKS //
-.social-links-container
-    display: flex
-    justify-content: center
-    align-items: center
-    padding: 5px 0
-    background: rgb(26,84,231)
-    a
-        display: flex
-        padding: 12px 15px
-        margin-right: 10px
-        color: $white
-        font-size: 2rem
-        transition: .4s ease
-        background: rgb(58,160,219)
-        background: radial-gradient(circle, #57b8f094 0%, rgba(26,84,231,1) 60%)
-
-        img 
-            width: 25px
-            height: 25px
-            transition: .4s ease
-            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(256deg) brightness(104%) contrast(101%)
-            opacity: 0.85
-        img:hover
-            transform: scale(1.2)
-
-// FOOTER //
-footer 
-    background-color: rgb(26, 84, 231)
-    color: rgba(254, 253, 255, 0.8)
-    display: flex
-    flex-wrap: wrap
-    justify-content: center
-    padding: 20px 0
-    margin-top: -10px
-    .footer-logo
-        display: flex
-        order: 2
-        flex-basis: 20%
-        justify-content: center
-        align-items: center
-        img
-            display: flex
-            width: 80px
-    .footertext1 
-        order: 3
-        text-align: left
-        align-self: center
-        width: 30%
-        font-size: 1.2em
-    .footertext2
-        order: 1
-        text-align: right
-        align-self: center
-        width: 30%
-        font-size: 1.1em
-    p 
-        font-family: 'Raleway', sans-serif
-        font-weight: 500
-        white-space: nowrap
-        margin-bottom: 2px
-        font-size: 100%
-        line-height: 1.5em
-        a
-            color: rgba(254, 253, 255, 0.8)
-            transition: all 0.5s ease
-        a:hover
-            color: rgba(254, 253, 255, 0.68)
-            font-size: 1.05em
-            text-decoration: none
-            
-
-// CAROUSEL //
 .carousel-inner
     max-height: 35vw
     background-color: black
@@ -336,19 +174,22 @@ footer
             justify-content: center
             flex-flow: column
             bottom: auto !important
+            align-items: center
+    @media screen and (min-width: 1200px)
+        max-height: 87vh
     @media screen and (max-width: 700px)
-        min-height: 45vh
-        img 
+        min-height: 50vh
+        img
             width: auto !important
-            min-height: 45vh
+            min-height: 50vh
             max-width: 700px !important
     @media screen and (max-width: 450px)
-        min-height: 50vh
-        img 
+        min-height: 55vh
+        img
             width: auto !important
-            min-height: 50vh !important
-            max-width: 700px !important
-        
+            min-height: 55vh !important
+            max-width: 800px !important
+
     .carousel-indicators
         margin-bottom: 0
 
@@ -361,115 +202,230 @@ footer
         top: 15vw
         z-index: 0
 
-.carousel-fade .carousel-inner .carousel-item  
-    opacity: 0   
-    -webkit-transition-property: opacity   
-    -moz-transition-property: opacity   
-    -o-transition-property: opacity   
-    transition: opacity 1s ease !important 
-  
-.carousel-fade .carousel-inner .active  
+.carousel-fade .carousel-inner .carousel-item
+    opacity: 0
+    -webkit-transition-property: opacity
+    -moz-transition-property: opacity
+    -o-transition-property: opacity
+    transition: opacity 0.7s ease !important
+
+.carousel-fade .carousel-inner .active
     opacity: 1
-  
-.carousel-fade .carousel-inner .active.left, .carousel-fade .carousel-inner .active.right  
-    left: 0   
-    opacity: 0   
-    z-index: 1   
-  
-.carousel-fade .carousel-inner .next.left, .carousel-fade .carousel-inner .prev.right  
-    opacity: 0.5 
-  
-.carousel-fade .carousel-control  
-  z-index: 2   
 
-// PAge styles
+.carousel-fade .carousel-inner .active.left, .carousel-fade .carousel-inner .active.right
+    left: 0
+    opacity: 0
+    z-index: 1
 
-span.important
-    border-bottom: 2px dashed red
-    font-size: 1.1em
-.maincont
-    box-shadow: 0 0 10px rgba(200, 200, 200, 0.5)   
+.carousel-fade .carousel-inner .next.left, .carousel-fade .carousel-inner .prev.right
+    opacity: 0.5
+
+.carousel-fade .carousel-control
+    z-index: 2
+@media screen and (max-width: 600px)
+    .carousel-fade .carousel-control-next
+        span.carousel-control-next-icon 
+            opacity: 0
+    .carousel-fade .carousel-control-prev
+        span.carousel-control-prev-icon 
+            opacity: 0
+
+// dop content
+$green: #48BA4A 
+
+p.caption
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px
+    line-height: 2rem
+    text-align: justify
+    color: #333333
+span.green
+        color: $green 
+span.blue
+    color: $blue
+#capital
+    font-size: 25px
+#techno
+    font-size: 32px
+    font-weight: bold
+    color: blue
+    text-align: center
+    margin-bottom: 40px
+    margin-top: 20px
+
+
+.dopcont-header
+    width: 70%
     margin-bottom: 20px
-    .col-lg-5
-        border-bottom: 1px solid rgb(245, 226, 214)
-    .content
-        position: relative
-        width: 100%
-        margin: 30px
-        padding: 0 25px
-        border-left: 2px solid $blue
-        border-right: 2px solid $blue
-        img
-            display: block
-            margin: 15px auto
-        // iframe
-        //     margin: 15px auto
+    margin: 0 auto
+    background-image: url("../images/volunarizm2.jpg")
+    border-left: 2px solid $blue
+    border-right: 2px solid $blue
+    padding: 0 15px
+    padding-top: 0
 
+@media screen and ( max-width: 700px)
+    p.caption
+        font-size: 15px
+    #capital
+        font-size: 20px
+    #techno
+        font-size: 25px
+    .dopcont-header
+        width: 85%
+    
 
-    .author
-        background-color: rgba(255, 255, 255, 0.521)
-        // border: 3px solid rgba(206, 180, 165, 0.781)
-        border: 2px solid $navy
-        padding: 10px
-        border-bottom-right-radius: 20px
-        border-bottom-left-radius: 5px
-        border-top-left-radius: 5px
-        border-top-right-radius: 20px
-        max-width: 40%
-        margin-top: 1em
-        margin-left: -2em
-        padding-right: 3em
-        background-image: url('../images/blank-profile.png')
-        background-repeat: no-repeat
-        background-size: 25% 
-        background-position: 10% 50%
-        span
-            text-align: right
-            font-size: 80%
-            margin-top: 5px
-            margin-right: -30px
-            padding-left: 4em
-        .author-caption
-            text-align: right
-            font-size: 60%
-            display: none
-    p
-        color: $black
+.dopcont
+    width: 85%
+    display: flex
+    margin: 20px auto
+    flex-wrap: wrap
+    justify-content: center
+    padding: 10px
+    
+    img
+        width: 200px
+    p.list-caption
+        padding: 0 15px
+        font-family: 
+        color: $blue
+        font-size: 27px
         line-height: 1.5em
-        margin-top: -8px
-        overflow: wrap
-        overflow-wrap: anywhere
-        font-family: 'Ubuntu', sans-serif
-    .post-title
-        height: 30vh
-        width: 100%
-        background-size: cover
-        background-color: black
-        .darken-image
-            width: 100%
-            height: 100%
-            background-color: rgba(0, 0, 0, 0.4)
-            display: flex
-            justify-content: center
-            align-items: center
-            h1
-                display: flex
-                text-align: center
-                font-family: 'Open Sans', sans-serif
-                font-weight: 600
-                color: $white
-                font-size: 1.75em
-                text-shadow: 0 0 15px #000
-                padding: 10px 10px
-    .maincont-footer
-        color: rgba(189, 137, 126, 0.5)
-        padding-top: 25px
-        padding-bottom: 25px
-    .date
-        float: right
-    .topandbottom
-        z-index: -1
+        font-family: "Noto Sans", sans-serif
+    p.invitation
+        margin-top: 10px
+        font-size: 32px
+        font-weight: bold
+        color: $blue
+        text-align: center
+    ul
+        list-style: none
+        li
+            margin-top: 0.5rem
+            font-family: 'Raleway', sans-serif
+            font-size: 16px
+            line-height: 1.5rem
+            color: #333333
+            padding-right: 10px
+        li:before
+            content: "■  "
+            position: relative
+            bottom: 1.5px
+            color: $blue
 
+
+
+.dopcontr
+    border-left: 4px solid  #1a54e7
+    width: 50%
+
+
+.dopcontl
+    border-right: 4px solid  #48BA4A 
+    width: 50%
+    align-content: flex-start
+    p.list-caption
+        color: #48BA4A 
+    ul
+        li:before
+            color: $green
+
+
+button.click-me
+    display: block
+    margin: 10px auto !important
+    color: $white
+    background-color: $blue
+    border-color: $blue
+    letter-spacing: 1px
+    font-family: 'Raleway'
+    font-size: 23px
+    font-weight: bold
+
+// blue line
+.bord
+    margin: 0 auto
+    border-radius: 28%
+    margin-top: 1.5em
+    margin-bottom: 0.5em
+    border-bottom: 4px solid $blue
+    max-width: 150px
+
+// main blocks 3x3
+// SOCIAL LINKS //
+.social-links-container
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 5px 0
+    background: rgb(26,84,231)
+    a
+        display: flex
+        padding: 12px 15px
+        margin-right: 10px
+        color: $white
+        font-size: 2rem
+        transition: .4s ease
+        background: rgb(58,160,219)
+        background: radial-gradient(circle, #57b8f094 0%, rgba(26,84,231,1) 60%)
+
+        img
+            width: 25px
+            height: 25px
+            transition: .4s ease
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(256deg) brightness(104%) contrast(101%)
+            opacity: 0.85
+        img:hover
+            transform: scale(1.2)
+
+// FOOTER //
+footer
+    background-color: rgb(26, 84, 231)
+    color: rgba(254, 253, 255, 0.8)
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    padding: 20px 0
+    margin-top: -10px
+    .footer-logo
+        display: flex
+        order: 2
+        flex-basis: 20%
+        justify-content: center
+        align-items: center
+        img
+            display: flex
+            width: 80px
+    .footertext1
+        order: 3
+        text-align: left
+        align-self: center
+        width: 30%
+        font-size: 1.2em
+    .footertext2
+        order: 1
+        text-align: right
+        align-self: center
+        width: 30%
+        font-size: 1.1em
+    p
+        font-family: 'Raleway', sans-serif
+        font-weight: 500
+        white-space: nowrap
+        margin-bottom: 2px
+        font-size: 100%
+        line-height: 1.5em
+        a
+            color: rgba(254, 253, 255, 0.8)
+            transition: all 0.5s ease
+        a:hover
+            color: rgba(254, 253, 255, 0.68)
+            font-size: 1.05em
+            text-decoration: none
+
+
+// CAROUSEL //
+// PAge styles
 
 .post-container
     display: flex
@@ -483,6 +439,7 @@ span.important
         background-size: cover
         background-color: black
         background-position: center
+
         .darken-image
             width: 100%
             height: 100%
@@ -490,7 +447,7 @@ span.important
             background-attachment: fixed
             display: flex
             justify-content: center
-            align-items: center
+            align-items: flex-end
             h1
                 display: flex
                 text-align: center
@@ -500,7 +457,8 @@ span.important
                 font-size: 1.75em
                 text-shadow: 0 0 15px #000
                 padding: 10px 10px
-    
+                margin-bottom: 8vh
+
     .content
         width: 60vw
         @media screen and (max-width: 1600px)
@@ -515,7 +473,7 @@ span.important
         overflow: wrap
         overflow-wrap: anywhere
         color: black
-        // box-shadow: 0 0 10px rgba(200, 200, 200, 0.5)   
+        // box-shadow: 0 0 10px rgba(200, 200, 200, 0.5)
         border-left: 4px solid $blue
         border-right: 4px solid $blue
         padding: 5px 20px
@@ -531,7 +489,7 @@ span.important
             display: block
             margin: 15px auto
             max-width: 80vw
-    
+
     .author-date
         color: rgba(0, 0, 0, 0.65)
         display: flex
@@ -541,17 +499,24 @@ span.important
         p
             font-family: 'Raleway', sans-serif
             font-weight: 400
-    
+
 
 
 //Static page styles
 
 .static-main
     margin-bottom: 0
-    box-shadow: 0 0 10px rgba(200, 200, 200, 0.5)  
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.5)
+    font-family: 'Ubuntu', sans-serif
+    line-height: 1.5em
+    font-weight: 400
+    overflow: wrap
+    overflow-wrap: anywhere
     p
+        font-family: 'Ubuntu', sans-serif
         color: $black
-        font-size: 100%
+        // font-size: 100%
+        line-height: 1.3em
         margin-bottom: 0
         padding-top: 20px
         padding: 25px
@@ -612,7 +577,7 @@ span.important
 $postcard-width: 350px
 $postcard-width-650: 230px
 $postcard-width-950: 250px
-$postcard-width-500: 300px
+$postcard-width-500: 60vh
 $postcard-height: 300px
 $image-container-height: 180px
 .posts-container-ws
@@ -642,6 +607,8 @@ $image-container-height: 180px
                 max-width: $postcard-width-650
             @media screen and (max-width: 500px)
                 max-width: $postcard-width-500
+            @media screen and (max-width: 350px)
+                max-width: 45vh            
 
             .image-container
                 width: 100%
@@ -686,36 +653,38 @@ $image-container-height: 180px
                         font-weight: bold
         .postcard:hover
             transform: scale(1.04)
+        #figlnk:hover
+            text-decoration: none
 
 
 
 
-@media screen and (min-width: 800px) 
+@media screen and (min-width: 800px)
     .navbar
         display: none
     footer
         .footertext
             margin-left: 6.5em !important
-        img 
-            margin-top: 2px    
+        img
+            margin-top: 2px
 
 
-@media screen and (max-width: 800px) 
+@media screen and (max-width: 800px)
     .logo-text
         float: right
-    
 
-    header 
+
+    header
         flex-flow: column
-    
 
-    .logo 
+
+    .logo
         width: 100%
         justify-content: space-around
         display: none
-    
 
-    header .menu 
+
+    header .menu
         display: none
         top: -100px
         transition: all .6s ease-in-out
@@ -724,12 +693,12 @@ $image-container-height: 180px
             height: 200px
 
     footer
-        p 
+        p
             font-size: 70%
         .footer-logo
             img
                 width: 70px
-    
+
     .postcard
 
     .maincont
@@ -748,9 +717,25 @@ $image-container-height: 180px
             p
                 font-size: 90%
 
-@media screen and (max-width: 650px)
-     footer
-        p 
+@media screen and (max-width: 600px)
+    .dopcont
+        width: 100%
+        padding: 0
+        p.caption
+            font-size: 15px
+            line-height: 1.3em
+        .dopcontr
+           border-left: 2px solid  #1a54e7
+           margin-left: 15px
+           width: 100%
+        .dopcontl 
+           border-right: 2px solid  $green
+           margin-right: 15px
+           width: 100%
+
+
+    footer
+        p
             font-size: 60%
         .footertext2
             p
@@ -758,49 +743,32 @@ $image-container-height: 180px
         .footer-logo
             img
                 width: 50px
-@media screen and (max-width: 500px)  
+@media screen and (max-width: 500px)
 
     .logo-text
         font-size: 20px
-   
+
     .navbar-brand
         margin-right: 0
-    .navbar-brand img 
+    .navbar-brand img
         max-width: 70px
         margin-right: -10px
-   
+
 
     .phys-tech
         font-size: 8px
-
-    .dopcont 
-        p.caption 
-            font-size: 15px
-            line-height: 1.3em
-        h2
-            font-size: 25px
-        img
-            width: 150px
-   
-    figure.figure
-        img
-            height: 130px
-
-
-    .dopcontr
-        border-left: 2px solid  #1a54e7
-        margin-left: 15px
-    
-
-
-    .dopcontl
-        border-right: 2px solid  #1a54e7
-        margin-right: 15px
-
+    .dopcont-header
+        width: 100%
+        border: none
+    .dopcont
+        .dopcontr
+           margin-left: 0
+        .dopcontl 
+          margin-right: 0
     .bord
-        max-width: 50px
+        max-width: 70px
 
-    .user 
+    .user
         font-size: 0.4rem
     .datetime
         font-size: 0.4rem
@@ -818,17 +786,17 @@ $image-container-height: 180px
                 font-size: 60%
             margin-top: 15px
             width: 300px
-        p 
+        p
             font-size: 60%
         .footer-logo
-            img 
+            img
                 width: 60px
     .maincont
         .col-lg-5
             border-bottom: none
         h1
             font-size: 200%
-        
+
         .author
             max-width: 60%
             span
@@ -844,7 +812,7 @@ $image-container-height: 180px
     .thirdcol
         display: none
 
-@media screen and (max-width: 350px) 
+@media screen and (max-width: 350px)
     .logo-text
         font-size: 15px
         margin-top: 0px
