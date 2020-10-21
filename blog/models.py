@@ -5,23 +5,31 @@ from django.core.files import File
 from django.conf import settings
 
 POST_STATUS = (
-    (0,"Draft"),
-    (1,"Publish")
+    (0, "Draft"),
+    (1, "Publish")
 )
 
+
 def compress(image):
-    "Image compression method"
+    """
+    Image compression method
+    """
     im = Image.open(image)
-    im_io = BytesIO() 
-    im.save(im_io, 'JPEG', quality=60) 
+    im_io = BytesIO()
+    image_format = image.file.name.split('.')[-1]
+    image_format = 'JPEG' if image_format.upper() == 'JPG' else image_format
+    im.save(im_io, image_format, quality=60)
     new_image = File(im_io, name=image.name)
     return new_image
+
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name='blog_posts', null=True)
-    
+    author = models.ForeignKey(settings.AUTH_USER_MODEL,
+                               on_delete=models.SET_NULL,
+                               related_name='blog_posts', null=True)
+
     title_image = models.ImageField(upload_to='title_images/%Y/%m/%d/')
     content = models.TextField()
 
@@ -34,7 +42,7 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} ({self.created_on})"
-    
+
     def save(self, *args, **kwargs):
         self.title_image = compress(self.title_image)
         super().save(*args, **kwargs)
@@ -49,6 +57,5 @@ class SliderPost(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
-        # new_image = compress(self.image)
         self.image = compress(self.image)
         super().save(*args, **kwargs)

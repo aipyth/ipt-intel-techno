@@ -2,6 +2,8 @@
 
 {% load humanize %}
 
+{% load static %}
+
 {% block content %}
 
 {% if slider_posts %}
@@ -57,76 +59,48 @@
     </a>
 </div>
 {% endif %}
+<div class="bord"></div>
 
-
-
-
-<!-- <div class="container-fluid pt-4 pb-3">
-    <div class="row justify-content-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <div class="row">
-                        <div class="dopcont dopcontl">
-                            <h2>Dolor sit amet!</h2>
-                            <div class="float-left">
-                                {% comment %} <img src="{% static "images/Layer 3.png" %}" alt="" class="px-2" width=""> {% endcomment %}
-                            </div>
-                            <p class="caption">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-                                exercitationem accusamus
-                                saepe iure, distinctio quis sed possimus voluptas, magni perspiciatis impedit architecto
-                                provident
-                                cumque sapiente tempora eveniet fuga eligendi autem.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <div class="row">
-                        <div class="dopcont dopcontr">
-                            <h2>Dolor sit amet!</h2>
-                            <div class="float-right">
-                                {% comment %} <img src="{% static "images/Layer 3.png" %}" alt="" class="px-2" width=""> {% endcomment %}
-                            </div>
-                            <p class="caption">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-                                exercitationem accusamus
-                                saepe iure, distinctio quis sed possimus voluptas, magni perspiciatis impedit architecto
-                                provident
-                                cumque sapiente tempora eveniet fuga eligendi autem.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="dopcont-header" style="background-image: url("{% static "images/voluntarizm2.JPG" %}");">>
+    <div>
+    <p class="caption" id="capital">Запрошуємо учнів 8-11 класів взяти участь у науково-технічному конкурсі</p>
+    <p class="caption" id="techno">«<span class="green">Еко</span>-Техно Україна 2021»</p>
+    <p class="caption"> який буде проводитися в он-лайн форматі з 3 по 13 листопада 2020р серед таких базових структурних підрозділів з організації та проведення конкурсу:</p>       
+</div>
+</div>
+<div class="dopcont">
+    <div class="dopcont dopcontl">
+        <p class="list-caption">Частина «Еко-Україна» – НЕНЦ в категоріях за напрямом:</p>
+        <ul>
+            <li class="caption">біологія (науки про рослини, науки про тварин);</li>
+            <li class="caption">клітинна та молекулярна біологія;</li>
+            <li class="caption">мікробіологія;</li>
+            <li class="caption">науки про людину (біомедичні та медичні науки, прикладна медицина, науки про поведінку та соціум);</li>
+            <li class="caption">науки про землю та навколишнє середовище;</li>
+            <li class="caption">хімія, біохімія;</li>
+            <li class="caption">екологічна інженерія;</li>
+            <li class="caption">хімічна інженерія.</li>
+        </ul>
     </div>
-</div> -->
-
+    <div class="dopcont dopcontr">
+        <p class="list-caption">Частина «Техно-Україна» - ФТІ КПІ в категоріях за напрямом:</p>
+            <ul>
+                <li class="caption">інженерія (біомедична інженерія, інженерна механіка, матеріалознавство);</li>
+                <li class="caption">інформаційні технології (вбудовані системи, системне програмне забезпечення, обчислювальна біологія і
+                    біоінформатика, робототехніка та інтелектуальні машини);</li>
+                <li class="caption">біоінформатика, робототехніка та інтелектуальні машини);
+                </li>
+                <li class="caption">енергетика (фізична енергетика, хімічна енергетика);</li>
+                <li class="caption">математика;</li>
+                <li class="caption">фізика і астрономія.</li>
+            </ul>
+    </div>
+</div>
 
 <div class="bord">
 </div>
 
 
-{% comment %} {<div class="container mt-2">
-    <div class="row justify-content-center">
-        <div class="col-12">
-            <div class="row justify-content-center">
-                {% for post in posts_preview %}
-                <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-                    <div class="row">
-                        <a href="{% url 'post_detail' post.slug %}" id="figlnk">
-                            <figure class="figure">
-                                <img src="{{ post.title_image.url }}" alt="" class="figure-img  " width="100%">
-
-                                <figcaption class="figure-caption">{{ post.content|striptags|slice:":40" }}</figcaption>
-                                <span class="datetime">{{ post.created_on|naturaltime }} | {{ post.author }}</span>
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div> {% endcomment %}
 
 <div class="posts-container-ws">
     <div class="posts-container">
@@ -151,18 +125,5 @@
         {% endfor %}
     </div>
 </div>
-
-{% comment %} <div class="container-fluid dopcont2 mt-4">
-    <div class="row justify-content-center">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col dopcont2content text-center">
-                    <h3>Lorem ipsum dolor sit amet!!!</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> {% endcomment %}
-
 
 {% endblock %}
