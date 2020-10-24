@@ -402,9 +402,27 @@ span.blue {
   color: #1a54e7;
 }
 
+.dopcont p.link {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 22px;
+  font-family: "Noto Sans", sans-serif;
+  text-decoration: underline;
+}
+
 .dopcontr {
   border-left: 4px solid  #1a54e7;
   width: 50%;
+}
+
+.dopcontr p.techno a {
+  color: #1a54e7;
+}
+
+.dopcontr p.techno a:hover {
+  color: #1a54e7;
+  font-weight: bold;
 }
 
 .dopcontl {
@@ -420,6 +438,15 @@ span.blue {
 
 .dopcontl ul li:before {
   color: #48BA4A;
+}
+
+.dopcontl p.eco a {
+  color: #48BA4A;
+}
+
+.dopcontl p.eco a:hover {
+  color: #48BA4A;
+  font-weight: bold;
 }
 
 button.click-me {
