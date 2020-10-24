@@ -208,34 +208,6 @@ nav.navbar {
           align-items: center;
 }
 
-@media screen and (min-width: 1200px) {
-  .carousel-inner {
-    max-height: 87vh;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .carousel-inner {
-    min-height: 50vh;
-  }
-  .carousel-inner img {
-    width: auto !important;
-    min-height: 50vh;
-    max-width: 700px !important;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .carousel-inner {
-    min-height: 55vh;
-  }
-  .carousel-inner img {
-    width: auto !important;
-    min-height: 55vh !important;
-    max-width: 800px !important;
-  }
-}
-
 .carousel-inner .carousel-indicators {
   margin-bottom: 0;
 }
@@ -289,6 +261,210 @@ nav.navbar {
     opacity: 0;
   }
   .carousel-fade .carousel-control-prev span.carousel-control-prev-icon {
+    opacity: 0;
+  }
+}
+
+.karusel .karusel-content {
+  height: 87vh;
+  position: relative;
+  background-color: black;
+}
+
+.karusel .karusel-content .karusel-item {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  -webkit-transition: opacity 2s ease-out;
+  transition: opacity 2s ease-out;
+}
+
+.karusel .karusel-content .karusel-item .karusel-caption {
+  -ms-flex-preferred-size: content;
+      flex-basis: content;
+}
+
+.karusel .karusel-content .karusel-item .karusel-caption h5, .karusel .karusel-content .karusel-item .karusel-caption p {
+  text-align: center;
+  margin-bottom: 5px;
+  text-shadow: 3px 2px 15px #000;
+}
+
+.karusel .karusel-content .karusel-item .karusel-caption h5 {
+  font-size: 27px;
+}
+
+.karusel .karusel-content .karusel-item .karusel-caption p {
+  font-size: 20px;
+}
+
+.karusel .karusel-content .aktiv {
+  opacity: 1;
+}
+
+.karusel .karusel-content a.prev-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 18%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.karusel .karusel-content a.prev-control .prevbutton {
+  -ms-flex-preferred-size: content;
+      flex-basis: content;
+}
+
+.karusel .karusel-content a.prev-control .prevbutton .icon {
+  opacity: 0.7;
+  width: 36px;
+  height: 70px;
+  border-image-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: invert(65%) saturate(0%) hue-rotate(256deg) brightness(130%) contrast(120%);
+          filter: invert(65%) saturate(0%) hue-rotate(256deg) brightness(130%) contrast(120%);
+}
+
+.karusel .karusel-content a.prev-control:hover {
+  background: -webkit-gradient(linear, right top, left top, color-stop(20%, rgba(0, 0, 0, 0)), color-stop(98%, rgba(25, 25, 25, 0.7)));
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0) 20%, rgba(25, 25, 25, 0.7) 98%);
+  cursor: pointer;
+}
+
+.karusel .karusel-content a.prev-control:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.karusel .karusel-content a.next-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 100%;
+  width: 18%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.karusel .karusel-content a.next-control .nextbutton {
+  -ms-flex-preferred-size: content;
+      flex-basis: content;
+  -webkit-transform: rotatez(180deg);
+          transform: rotatez(180deg);
+}
+
+.karusel .karusel-content a.next-control .nextbutton .icon {
+  opacity: 0.7;
+  width: 36px;
+  height: 70px;
+  border-image-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: invert(65%) saturate(0%) hue-rotate(256deg) brightness(130%) contrast(120%);
+          filter: invert(65%) saturate(0%) hue-rotate(256deg) brightness(130%) contrast(120%);
+}
+
+.karusel .karusel-content a.next-control:hover {
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, rgba(0, 0, 0, 0)), color-stop(98%, rgba(25, 25, 25, 0.7)));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgba(25, 25, 25, 0.7) 98%);
+  cursor: pointer;
+}
+
+.karusel .karusel-content a.next-control:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.karusel .karusel-content #counts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.karusel .karusel-content #counts span {
+  display: inline-block;
+  width: 50px;
+  border-top: 5px solid #fefdff;
+  list-style: none;
+  margin: 15px 5px;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+
+.karusel .karusel-content #counts span.this {
+  opacity: 1;
+}
+
+@media screen and (min-width: 1200px) {
+  .karusel .karusel-content {
+    height: 87vh;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .karusel .karusel-content {
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .karusel .karusel-content {
+    height: 55vh;
+  }
+  .karusel .karusel-content #counts span {
+    width: 30px;
+    border-width: 3px;
+  }
+  .karusel .karusel-content .karusel-item .karusel-caption p {
+    font-size: 15px;
+  }
+  .karusel .karusel-content .karusel-item .karusel-caption h5 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .karusel .karusel-content a.next-control div {
+    opacity: 0;
+  }
+  .karusel .karusel-content a.prev-control div {
     opacity: 0;
   }
 }

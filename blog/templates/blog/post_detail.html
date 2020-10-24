@@ -1,41 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% comment %} <div class="col-12 bg-light" style="border-bottom: 1px solid rgb(245, 226, 214);">
-  {% endcomment %}
-{% comment %} <div class="container">
-  <div class="row">
-    <div class="col maincont">
-      <div class="row">
-          <div class="post-title" style="background-image: url({{ post.title_image.url }});">
-            <div class="darken-image">
-              <h1>{{ post.title }}</h1>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="content">
-            {{ post.content|safe }}
-          </div>
-        </div>
-      <div class="row">
-        <div class="col topandbottom bg-light" style="border-top: 1px solid rgb(245, 226, 214);">
-          <div class="author float-left">
-            <span class=" float-left">{{ post.author }}</span>
-            <br>
-          </div>
-        </div>
-        <div class="maincont-footer col topandbottom bg-light" style="border-top: 1px solid rgb(245, 226, 214);">
-          <div class="date">
-            <span class="datetime">{{ post.created_on }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div> {% endcomment %}
-
 <div class="post-container">
   <div class="post-title" style="background-image: url({{ post.title_image.url }});">
     <div class="darken-image">

@@ -7,61 +7,50 @@
 {% block content %}
 
 {% if slider_posts %}
-
-<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
-
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        {% for post in slider_posts|slice:"1:" %}
-        <li data-target="#carouselExampleCaptions" data-slide-to="{{ forloop.counter }}"></li>
-        {% endfor %}
-    </ol>
-
-    <div class="carousel-inner">
-
-        <!-- <div class="carousel-static-caption">
-            <h5>Static Caption head</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div> -->
-
-        <div class="carousel-item active">
-        <div class="img-block">
-            <img src="{{ slider_posts.0.image.url }}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block">
+<div class="karusel">
+    <div class="karusel-content">
+        <div class="karusel-item aktiv" style="background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url({{ slider_posts.0.image.url }});">
+            <div class="img-dark"></div>
+            <div class="karusel-caption">
                 <h5>{{ slider_posts.0.title }}</h5>
                 <p>{{ slider_posts.0.text }}</p>
             </div>
         </div>
-        </div>
 
         {% for post in slider_posts|slice:"1:" %}
-        <div class="carousel-item">
-            <div class="img-block">
-            <img src="{{ post.image.url }}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-md-block">
+        <div class="karusel-item" style="background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url({{ post.image.url }});">
+            <div class="img-dark"></div>
+            <div class="karusel-caption">
                 <h5>{{ post.title }}</h5>
                 <p>{{ post.text }}</p>
             </div>
         </div>
-        </div>
         {% endfor %}
 
+        <a class="prev-control">
+            <div class="prevbutton">
+                <div class="icon" style="background-image: url({% static "images/Arrow.svg" %} );"></div>
+            </div>
+        </a>
+        <a class="next-control">
+            <div class="nextbutton">
+                <div class="icon" style="background-image: url({% static "images/Arrow.svg" %} );"></div>
+            </div>
+        </a>
+        <div id="counts">
+        </div>
     </div>
-
-    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-
-    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
 </div>
-{% endif %}
+<script src="{% static "scripts/slider.js" %}"></script>
+
+{% endif %} 
+
+
+
+
 <div class="bord"></div>
 
-<div class="dopcont-header" style="background-image: url("{% static "images/voluntarizm2.JPG" %}");">>
+<div class="dopcont-header" style="background-image: url({% static "images/voluntarizm2.JPG" %});">>
     <div>
     <p class="caption" id="capital">Запрошуємо учнів 8-11 класів взяти участь у науково-технічному конкурсі</p>
     <p class="caption" id="techno">«<span class="green">Еко</span>-Техно Україна 2021»</p>
@@ -127,5 +116,4 @@
         {% endfor %}
     </div>
 </div>
-
 {% endblock %}
