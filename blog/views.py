@@ -5,7 +5,7 @@ from .models import Post, SliderPost
 
 
 def home_view(request):
-    slider_posts = SliderPost.objects.filter(active=True).order_by('-updated_on')
+    slider_posts = SliderPost.objects.filter(active=True)
     posts = Post.objects.filter(status=1).order_by('-created_on')[:9]
     context = {
         'slider_posts': slider_posts,

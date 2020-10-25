@@ -15,5 +15,8 @@ class DocumentTest(TestCase):
         testdoc.close()
     def test_doc_created_properly(self):
         self.assertEqual('Document1',self.doc.__str__())
-        
-        #TODO: check if the uploaded string is empty
+        self.assertIsInstance(self.doc, Document)
+
+    def test_dcpage_created_properly(self):
+        self.assertEqual('Info',self.dcpage.name)
+        self.assertEqual('Created new text', self.dcpage.text)
