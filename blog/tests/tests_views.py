@@ -3,13 +3,14 @@ from blog.models import Post
 from django.contrib.auth import get_user_model
 
 class BlogPageTest(TestCase):
-    #@classmethod
+    # @classmethod
     # def setUpTestData(self):
+    
     #     user = get_user_model()
     #     admin = user.objects.create_superuser('superuser@mail.com', 'supersuper')
     #     self.testpost = Post.objects.create(
-    #         title = 'info',slug = 'info', author = admin,content='244466666', 
-    #         status = 0, title_image='title_images/2020')
+    #             title = 'info',slug = 'info', author = admin,content='244466666', 
+    #             status = 0)
     #     self.testpost.save()
   
     def test_home_exist(self):

@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400   700&family=PT+Serif:ital,wght@0,400   0,700   1,400&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200   500   600   700&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300   400   600   700&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,400&display=swap')
 
 $blue: rgb(26, 84, 231)
+$dark-blue: rgb(26, 84, 185)
 $black: rgb(51, 51, 51)
 $navy: #55c1ff
 $white: #fefdff
+$green: #48BA4A
+$dark-green: #494
 
 *
     box-sizing: border-box
@@ -39,48 +42,59 @@ header
     z-index: 3
     span
         color: $white
-    box-shadow: 0 0 10px rgba(200, 200, 200, 1)
     #header-link
         text-decoration: none
         color: $white
+        display: flex
+        flex-direction: row
 
 
-.logo
-    width: 40%
-    display: flex
-    justify-content: flex-end
-    align-items: center
-    padding: 10px
-    background-color: #1a54e7
+    .logo
+        width: 40%
+        display: flex
+        justify-content: flex-end
+        align-content: center
+        padding: 10px
+        background-color: #1a54e7
+        .collapsing-menu
+            display: none
+            height: 45px
+            margin-right: 15px
+            align-self: center
+            padding: 4px 10px
+            justify-self: flex-end
+            border: 1px solid rgba(255, 255, 255, 0.2)
+            border-radius: 5px
+            img
+                align-self: center
+                width: 25px
+                height: 30px
+                filter: invert(100%)
+                opacity: 0.75
 
 
-.logo img
-    max-width: 100px
-    max-height: 55px
+
+    .logo img
+        max-width: 100px
+        max-height: 55px
 
 
 
-.navbar-brand img
-    max-width: 100px
-    max-height: 50px
+    .logo-text
+        font-family: 'Raleway', sans-serif
+        font-weight: 400
+        font-size: 26px
+        color: #fefdff
+        margin: 0 15px
+        margin-top: -5px
+        white-space: nowrap
+        line-height: 1em
 
-
-.logo-text
-    font-family: 'Raleway', sans-serif
-    font-weight: 400
-    font-size: 26px
-    color: #fefdff
-    margin: 0 15px
-    margin-top: -5px
-    white-space: nowrap
-    line-height: 1em
-
-
-header .menu
-    margin-top: 13px
-    display: flex
-    flex-direction: row
-    justify-content: center
+    .menu
+        margin-top: 13px
+        display: flex
+        flex-direction: row
+        justify-content: center
 
 
 .menu .menu-item
@@ -140,13 +154,13 @@ header .menu
 
 // second logo
 
-nav.navbar
-    background-color: #1a54e7 !important
+// nav.navbar
+//     background-color: #1a54e7 !important
 
 
-#navitem
-    color: #fefdff
-    font-family: 'Noto Sans', sans-serif
+// #navitem
+//     color: #fefdff
+//     font-family: 'Noto Sans', sans-serif
 
 
 .phys-tech
@@ -162,6 +176,7 @@ nav.navbar
         height: 87vh
         position: relative
         background-color: black
+        z-index: -2
         .karusel-item
             position: absolute
             left: 0px
@@ -242,13 +257,13 @@ nav.navbar
             width: 100%
             justify-content: center
             span
-               display: inline-block
-               width: 50px
-               border-top: 5px solid $white
-               list-style: none
-               margin: 15px 5px
-               border-radius: 5px
-               opacity: 0.5
+                display: inline-block
+                width: 50px
+                border-top: 5px solid $white
+                list-style: none
+                margin: 15px 5px
+                border-radius: 5px
+                opacity: 0.5
             span.this
                 opacity: 1
         @media screen and (min-width: 1200px)
@@ -265,29 +280,28 @@ nav.navbar
                 .karusel-caption
                     p
                         font-size: 14px
-                    h5 
+                    h5
                         font-size: 20px
         @media screen and (max-width: 600px)
             a.next-control
                 div
                     opacity: 0
             a.prev-control
-                div 
+                div
                     opacity: 0
 
 
-    
+
 // dop content
-$green: #48BA4A 
 
 p.caption
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif
     font-size: 20px
     line-height: 2rem
     text-align: justify
     color: #333333
 span.green
-        color: $green 
+        color: $green
 span.blue
     color: $blue
 #capital
@@ -320,7 +334,7 @@ span.blue
         font-size: 25px
     .dopcont-header
         width: 85%
-    
+
 
 .dopcont
     width: 85%
@@ -329,12 +343,11 @@ span.blue
     flex-wrap: wrap
     justify-content: center
     padding: 10px
-    
+
     img
         width: 200px
     p.list-caption
         padding: 0 15px
-        font-family: 
         color: $blue
         font-size: 27px
         line-height: 1.5em
@@ -359,13 +372,22 @@ span.blue
             position: relative
             bottom: 1.5px
             color: $blue
-    p.link 
-        margin-top: 10px
-        margin-bottom: 10px
+    p.link
+        // ДЕНИС! ВОТ ЭТУ ХЕРЬ
+        // margin-top: 10px
+        // margin-bottom: 10px
+        // МОЖНО ЗАМЕНИТЬ ЭТИМ!!!
+        color: $white
         text-align: center
-        font-size: 22px
+        font-size: 1.5rem
         font-family: "Noto Sans", sans-serif
-        text-decoration: underline
+        border-radius: 5px
+        margin: 10px 0
+        padding: 5px 10px
+        transition: all 0.5s
+    p.link:hover
+        // font-size: 1.52rem
+        padding: 5px 12px
 
 
 
@@ -374,31 +396,38 @@ span.blue
     border-left: 4px solid  #1a54e7
     width: 50%
     p.techno
-        a 
-            color: $blue
+        a
+            background-color: $blue
+            color: $white
+            border-radius: 5px
+            text-decoration: none
+            padding: 3px 15px
+            transition: all 0.5s
         a:hover
-            color: $blue
-            font-weight: bold
+            background-color: $dark-blue
 
 
 
 
 .dopcontl
-    border-right: 4px solid  #48BA4A 
+    border-right: 4px solid  #48BA4A
     width: 50%
     align-content: flex-start
     p.list-caption
-        color: #48BA4A 
+        color: #48BA4A
     ul
         li:before
             color: $green
     p.eco
-        a 
-            color: $green
+        a
+            background-color: $green
+            color: $white
+            border-radius: 5px
+            text-decoration: none
+            padding: 3px 15px
+            transition: all 0.5s
         a:hover
-            color: $green
-            font-weight: bold
-
+            background-color: $dark-green
 
 button.click-me
     display: block
@@ -676,7 +705,7 @@ $image-container-height: 180px
             @media screen and (max-width: 500px)
                 max-width: $postcard-width-500
             @media screen and (max-width: 350px)
-                max-width: 45vh            
+                max-width: 45vh
 
             .image-container
                 width: 100%
@@ -728,8 +757,7 @@ $image-container-height: 180px
 
 
 @media screen and (min-width: 800px)
-    .navbar
-        display: none
+
     footer
         .footertext
             margin-left: 6.5em !important
@@ -738,24 +766,41 @@ $image-container-height: 180px
 
 
 @media screen and (max-width: 800px)
-    .logo-text
-        float: right
-
 
     header
         flex-flow: column
-
-
-    .logo
+        background-color: $blue
+        .logo
+            width: 100%
+            justify-content: space-between !important
+            .collapsing-menu
+                display: flex !important
+    .menu
+        background-color: $blue
+        margin-top: 0 !important
+        justify-content: flex-start !important
+        flex-direction: column
+        position: absolute
+        max-height: 0px
+        overflow: hidden
+        top: 74px
+        z-index: -1
         width: 100%
-        justify-content: space-around
-        display: none
+        transition: 2s ease max-height
+        .menu-item
+            margin-left: 10px !important
+            padding-left: 10px
+            border-left: 5px solid $white
+            a
+                color: $white
+    .act
+        max-height: 200px
 
 
-    header .menu
-        display: none
-        top: -100px
-        transition: all .6s ease-in-out
+
+
+
+
     figure.figure
         img
             height: 200px
@@ -793,13 +838,13 @@ $image-container-height: 180px
             font-size: 15px
             line-height: 1.3em
         .dopcontr
-           border-left: 2px solid  #1a54e7
-           margin-left: 15px
-           width: 100%
-        .dopcontl 
-           border-right: 2px solid  $green
-           margin-right: 15px
-           width: 100%
+            border-left: 2px solid  #1a54e7
+            margin-left: 15px
+            width: 100%
+        .dopcontl
+            border-right: 2px solid  $green
+            margin-right: 15px
+            width: 100%
 
 
     footer
@@ -813,28 +858,30 @@ $image-container-height: 180px
                 width: 50px
 @media screen and (max-width: 500px)
 
-    .logo-text
-        font-size: 20px
-
-    .navbar-brand
-        margin-right: 0
-    .navbar-brand img
-        max-width: 70px
-        margin-right: -10px
-
-
     .phys-tech
-        font-size: 8px
+        font-size: 10px
+    .int-tech
+        font-size: 22px
+    .logo-text
+        margin-left: 5px !important
     .dopcont-header
         width: 100%
         border: none
+
+    #header-link
+        img
+            max-width: 80px
+            max-height: 40px
+            align-self: center
+    .menu
+        top: 67px !important
     .dopcont
         .dopcontr
-           margin-left: 0
-           border-width: 4px
-        .dopcontl 
-          margin-right: 0
-          border-width: 4px
+            margin-left: 0
+            border-width: 4px
+        .dopcontl
+            margin-right: 0
+            border-width: 4px
     .bord
         max-width: 70px
 
@@ -882,7 +929,31 @@ $image-container-height: 180px
     .thirdcol
         display: none
 
+
+
 @media screen and (max-width: 350px)
+
+    header
+        .logo
+            .logo-text
+                font-size: 20px
+                align-items: center
+            .collapsing-menu
+                margin-right: 7px !important
+                height: 100%
+        .menu
+            .menu-item
+                a
+                    font-size: 18px
+                    padding: 15px 10px !important
+        .phys-tech
+            font-size: 9px
+            line-height: 0.4rem
+        .int-tech
+            font-size: 15px
+            line-height: 0.4rem
+
+
     .logo-text
         font-size: 15px
         margin-top: 0px

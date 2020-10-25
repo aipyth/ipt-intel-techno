@@ -3,6 +3,7 @@ from io import BytesIO
 from PIL import Image
 from django.core.files import File
 from django.conf import settings
+from django.dispatch import receiver
 
 POST_STATUS = (
     (0, "Draft"),
@@ -14,12 +15,13 @@ def compress(image):
     """
     Image compression method
     """
+    image_name = image.name.split('/')[-1]
     im = Image.open(image)
-    im_io = BytesIO()
-    image_format = image.file.name.split('.')[-1]
+    image_io = BytesIO()
+    image_format = image.name.split('.')[-1]
     image_format = 'JPEG' if image_format.upper() == 'JPG' else image_format
-    im.save(im_io, image_format, quality=60)
-    new_image = File(im_io, name=image.name)
+    im.save(image_io, image_format, quality=60)
+    new_image = File(image_io, name=image_name)
     return new_image
 
 
@@ -55,7 +57,28 @@ class SliderPost(models.Model):
     active = models.BooleanField(default=False)
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now_add=True)
+    index = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ['index', '-updated_on']
 
     def save(self, *args, **kwargs):
         self.image = compress(self.image)
         super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        self.image.storage.delete(self.image.name)
+        super().delete(*args, **kwargs)
+
+
+@receiver(models.signals.pre_save, sender=SliderPost)
+def delete_file_on_change_extension(sender, instance, **kwargs):
+    if instance.pk:
+        try:
+            old_image = SliderPost.objects.get(pk=instance.pk).image
+        except SliderPost.DoesNotExist:
+            return
+        else:
+            new_avatar = instance.image
+            if old_image and old_image.url != new_avatar.url:
+                old_image.delete(save=False)
