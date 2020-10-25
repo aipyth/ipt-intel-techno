@@ -26,33 +26,33 @@
 
     {% block header %}
     <header>
-        <div class="logo pb-3">
+        <div class="logo">
                 <a href="{% url 'home' %}" id="header-link">
                     <img src="{% static "images/logo2.png" %}" alt="">
-                </a>
-                <a href="{% url 'home' %}" id="header-link">
                     <div class="logo-text">
                         <span class="phys-tech">Фізико - Технічний інститут</span>
                         <br>
                         <span class="int-tech">Еко-Техно Україна</span>
                     </div>
                 </a>
+                <div class="collapsing-menu" id="navbutton">
+                    <img src="{% static "images/menu.svg" %}" alt="">
+                </div>
         </div>
-        <div class="menu" id="header-menu">
-            <span class="menu-item px-3">
+        <div class="menu">
+            <span class="menu-item">
                 <a href="{% url 'post_list' %}">Блог</a>
             </span>
 
             {% get_docpages %}
 
             {% comment %} Someday we'll write about us {% endcomment %}
-            {% comment %} <span class="menu-item px-3">
+            {% comment %} <span class="menu-item">
                 <a href="">About Us</a>
             </span> {% endcomment %}
         </div>
 
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-            <!-- Brand -->
+        <!-- <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="navbar-brand" href="#">
                 <a href="{% url 'home' %}" id="header-link">
                 <img src="{% static "images/logo2.png" %}" alt="">
@@ -66,12 +66,10 @@
             </a>
             </div>
 
-            <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -85,7 +83,7 @@
                     </li> {% endcomment %}
                 </ul>
             </div>
-        </nav>
+        </nav> -->
     </header>
     {% endblock %}
 
@@ -120,6 +118,7 @@
   </footer>
     {% endblock %}
     {% comment %} JS {% endcomment %}
+    <script src="{% static "scripts/nav.js" %}"></script>
     <script src="{% static "js/jquery-3.5.1.slim.min.js" %}"></script>
     {% comment %} <script src="{% static "js/popper.min.js" %}"></script> {% endcomment %}
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

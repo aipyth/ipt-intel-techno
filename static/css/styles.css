@@ -23,45 +23,53 @@ header {
   display: flex;
   background-color: #fefdff;
   width: 100%;
-  z-index: 3;
-  box-shadow: 0 0 10px #c8c8c8; }
+  z-index: 3; }
   header span {
     color: #fefdff; }
   header #header-link {
     text-decoration: none;
-    color: #fefdff; }
-
-.logo {
-  width: 40%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px;
-  background-color: #1a54e7; }
-
-.logo img {
-  max-width: 100px;
-  max-height: 55px; }
-
-.navbar-brand img {
-  max-width: 100px;
-  max-height: 50px; }
-
-.logo-text {
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  font-size: 26px;
-  color: #fefdff;
-  margin: 0 15px;
-  margin-top: -5px;
-  white-space: nowrap;
-  line-height: 1em; }
-
-header .menu {
-  margin-top: 13px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
+    color: #fefdff;
+    display: flex;
+    flex-direction: row; }
+  header .logo {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    padding: 10px;
+    background-color: #1a54e7; }
+    header .logo .collapsing-menu {
+      display: none;
+      height: 45px;
+      margin-right: 15px;
+      align-self: center;
+      padding: 4px 10px;
+      justify-self: flex-end;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 5px; }
+      header .logo .collapsing-menu img {
+        align-self: center;
+        width: 25px;
+        height: 30px;
+        filter: invert(100%);
+        opacity: 0.75; }
+  header .logo img {
+    max-width: 100px;
+    max-height: 55px; }
+  header .logo-text {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: #fefdff;
+    margin: 0 15px;
+    margin-top: -5px;
+    white-space: nowrap;
+    line-height: 1em; }
+  header .menu {
+    margin-top: 13px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
 
 .menu .menu-item {
   color: #1a54e7; }
@@ -105,20 +113,14 @@ header .menu {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box; }
 
-nav.navbar {
-  background-color: #1a54e7 !important; }
-
-#navitem {
-  color: #fefdff;
-  font-family: "Noto Sans", sans-serif; }
-
 .phys-tech {
   font-size: 12px; }
 
 .karusel .karusel-content {
   height: 87vh;
   position: relative;
-  background-color: black; }
+  background-color: black;
+  z-index: -2; }
   .karusel .karusel-content .karusel-item {
     position: absolute;
     left: 0px;
@@ -648,29 +650,41 @@ footer {
       text-decoration: none; }
 
 @media screen and (min-width: 800px) {
-  .navbar {
-    display: none; }
-
   footer .footertext {
     margin-left: 6.5em !important; }
   footer img {
     margin-top: 2px; } }
 @media screen and (max-width: 800px) {
-  .logo-text {
-    float: right; }
-
   header {
-    flex-flow: column; }
+    flex-flow: column;
+    background-color: #1a54e7; }
+    header .logo {
+      width: 100%;
+      justify-content: space-between !important; }
+      header .logo .collapsing-menu {
+        display: flex !important; }
 
-  .logo {
+  .menu {
+    background-color: #1a54e7;
+    margin-top: 0 !important;
+    justify-content: flex-start !important;
+    flex-direction: column;
+    position: absolute;
+    max-height: 0px;
+    overflow: hidden;
+    top: 74px;
+    z-index: -1;
     width: 100%;
-    justify-content: space-around;
-    display: none; }
+    transition: 2s ease max-height; }
+    .menu .menu-item {
+      margin-left: 10px !important;
+      padding-left: 10px;
+      border-left: 5px solid #fefdff; }
+      .menu .menu-item a {
+        color: #fefdff; }
 
-  header .menu {
-    display: none;
-    top: -100px;
-    transition: all 0.6s ease-in-out; }
+  .act {
+    max-height: 200px; }
 
   figure.figure img {
     height: 200px; }
@@ -716,22 +730,26 @@ footer {
   footer .footer-logo img {
     width: 50px; } }
 @media screen and (max-width: 500px) {
-  .logo-text {
-    font-size: 20px; }
-
-  .navbar-brand {
-    margin-right: 0; }
-
-  .navbar-brand img {
-    max-width: 70px;
-    margin-right: -10px; }
-
   .phys-tech {
-    font-size: 8px; }
+    font-size: 10px; }
+
+  .int-tech {
+    font-size: 22px; }
+
+  .logo-text {
+    margin-left: 5px !important; }
 
   .dopcont-header {
     width: 100%;
     border: none; }
+
+  #header-link img {
+    max-width: 80px;
+    max-height: 40px;
+    align-self: center; }
+
+  .menu {
+    top: 67px !important; }
 
   .dopcont .dopcontr {
     margin-left: 0;
@@ -787,6 +805,22 @@ footer {
   .thirdcol {
     display: none; } }
 @media screen and (max-width: 350px) {
+  header .logo .logo-text {
+    font-size: 20px;
+    align-items: center; }
+  header .logo .collapsing-menu {
+    margin-right: 7px !important;
+    height: 100%; }
+  header .menu .menu-item a {
+    font-size: 18px;
+    padding: 15px 10px !important; }
+  header .phys-tech {
+    font-size: 9px;
+    line-height: 0.4rem; }
+  header .int-tech {
+    font-size: 15px;
+    line-height: 0.4rem; }
+
   .logo-text {
     font-size: 15px;
     margin-top: 0px; } }
