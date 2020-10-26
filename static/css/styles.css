@@ -1127,8 +1127,8 @@ footer p a:hover {
     max-height: 0px;
     overflow: hidden;
     width: 100%;
-    -webkit-transition: 2s ease max-height;
-    transition: 2s ease max-height;
+    -webkit-transition: 2s ease max-height, 0.3s ease padding-bottom;
+    transition: 2s ease max-height, 0.3s ease padding-bottom;
   }
   .menu .menu-item {
     margin-left: 10px !important;
@@ -1149,6 +1149,7 @@ footer p a:hover {
   }
   .act {
     max-height: 200px;
+    padding-bottom: 10px;
   }
   figure.figure img {
     height: 200px;
