@@ -32,8 +32,6 @@ header {
   background-color: #fefdff;
   width: 100%;
   z-index: 3;
-  -webkit-box-shadow: 0 0 10px #c8c8c8;
-          box-shadow: 0 0 10px #c8c8c8;
 }
 
 header span {
@@ -43,9 +41,16 @@ header span {
 header #header-link {
   text-decoration: none;
   color: #fefdff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.logo {
+header .logo {
   width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -53,24 +58,42 @@ header #header-link {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   padding: 10px;
   background-color: #1a54e7;
 }
 
-.logo img {
+header .logo .collapsing-menu {
+  display: none;
+  height: 45px;
+  margin-right: 15px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 4px 10px;
+  justify-self: flex-end;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+header .logo .collapsing-menu img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 25px;
+  height: 30px;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  opacity: 0.75;
+}
+
+header .logo img {
   max-width: 100px;
   max-height: 55px;
 }
 
-.navbar-brand img {
-  max-width: 100px;
-  max-height: 50px;
-}
-
-.logo-text {
+header .logo-text {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 26px;
@@ -100,6 +123,7 @@ header .menu {
 }
 
 .menu .menu-item a {
+  color: #1a54e7;
   height: 100%;
   display: inline-block;
   text-align: center;
@@ -113,6 +137,14 @@ header .menu {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+}
+
+.menu .menu-item a:visited {
+  color: #1a54e7;
+}
+
+.menu .menu-item a:active {
+  color: #1a54e7;
 }
 
 .menu .menu-item:first-child {
@@ -149,15 +181,6 @@ header .menu {
   -webkit-box-sizing: border-box;
 }
 
-nav.navbar {
-  background-color: #1a54e7 !important;
-}
-
-#navitem {
-  color: #fefdff;
-  font-family: 'Noto Sans', sans-serif;
-}
-
 .phys-tech {
   font-size: 12px;
 }
@@ -166,6 +189,7 @@ nav.navbar {
   height: 87vh;
   position: relative;
   background-color: black;
+  z-index: -2;
 }
 
 .karusel .karusel-content .karusel-item {
@@ -476,12 +500,16 @@ span.blue {
 }
 
 .dopcont p.link {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  color: #fefdff;
   text-align: center;
-  font-size: 22px;
+  font-size: 1.5rem;
   font-family: "Noto Sans", sans-serif;
-  text-decoration: underline;
+  line-height: 1.5;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 5px 10px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .dopcontr {
@@ -489,13 +517,21 @@ span.blue {
   width: 50%;
 }
 
-.dopcontr p.techno a {
-  color: #1a54e7;
+.dopcontr p.techno {
+  background-color: #1a54e7;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
-.dopcontr p.techno a:hover {
-  color: #1a54e7;
-  font-weight: bold;
+.dopcontr p.techno a {
+  color: #fefdff;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 3px 15px;
+}
+
+.dopcontr p.techno:hover {
+  background-color: #1a54b9;
 }
 
 .dopcontl {
@@ -513,13 +549,21 @@ span.blue {
   color: #48BA4A;
 }
 
-.dopcontl p.eco a {
-  color: #48BA4A;
+.dopcontl p.eco {
+  background-color: #48BA4A;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
-.dopcontl p.eco a:hover {
-  color: #48BA4A;
-  font-weight: bold;
+.dopcontl p.eco a {
+  color: #fefdff;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 3px 15px;
+}
+
+.dopcontl p.eco:hover {
+  background-color: #494;
 }
 
 button.click-me {
@@ -937,6 +981,10 @@ footer p a:hover {
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
+.posts-container-ws .posts-container .postcard #figlnk {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 950px) {
   .posts-container-ws .posts-container .postcard {
     max-width: 250px;
@@ -997,6 +1045,7 @@ footer p a:hover {
   font-weight: 600;
   text-align: center;
   padding-top: 5px;
+  margin: 0;
 }
 
 .posts-container-ws .posts-container .postcard .caption p {
@@ -1036,9 +1085,6 @@ footer p a:hover {
 }
 
 @media screen and (min-width: 800px) {
-  .navbar {
-    display: none;
-  }
   footer .footertext {
     margin-left: 6.5em !important;
   }
@@ -1048,26 +1094,65 @@ footer p a:hover {
 }
 
 @media screen and (max-width: 800px) {
-  .logo-text {
-    float: right;
-  }
   header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column;
             flex-flow: column;
+    background-color: #1a54e7;
   }
-  .logo {
+  header .logo {
     width: 100%;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    display: none;
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
   }
-  header .menu {
-    display: none;
-    top: -100px;
-    -webkit-transition: all .6s ease-in-out;
-    transition: all .6s ease-in-out;
+  header .logo .collapsing-menu {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .menu {
+    background-color: #1a54e7;
+    margin-top: 0 !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    max-height: 0px;
+    overflow: hidden;
+    width: 100%;
+    -webkit-transition: 2s ease max-height, 0.3s ease padding-bottom;
+    transition: 2s ease max-height, 0.3s ease padding-bottom;
+  }
+  .menu .menu-item {
+    margin-left: 10px !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 10px;
+    border-left: 5px solid #fefdff;
+  }
+  .menu .menu-item a {
+    color: #fefdff !important;
+  }
+  .menu .menu-item a:visited {
+    color: #fefdff !important;
+  }
+  .menu .menu-item a:active {
+    color: #fefdff !important;
+  }
+  .act {
+    max-height: 200px;
+    padding-bottom: 10px;
   }
   figure.figure img {
     height: 200px;
@@ -1130,22 +1215,28 @@ footer p a:hover {
 }
 
 @media screen and (max-width: 500px) {
-  .logo-text {
-    font-size: 20px;
-  }
-  .navbar-brand {
-    margin-right: 0;
-  }
-  .navbar-brand img {
-    max-width: 70px;
-    margin-right: -10px;
-  }
   .phys-tech {
-    font-size: 8px;
+    font-size: 10px;
+  }
+  .int-tech {
+    font-size: 22px;
+  }
+  .logo-text {
+    margin-left: 5px !important;
   }
   .dopcont-header {
     width: 100%;
     border: none;
+  }
+  #header-link img {
+    max-width: 80px;
+    max-height: 40px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .menu {
+    top: 67px !important;
   }
   .dopcont .dopcontr {
     margin-left: 0;
@@ -1223,6 +1314,28 @@ footer p a:hover {
 }
 
 @media screen and (max-width: 350px) {
+  header .logo .logo-text {
+    font-size: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .logo .collapsing-menu {
+    margin-right: 7px !important;
+    height: 100%;
+  }
+  header .menu .menu-item a {
+    font-size: 18px;
+    padding: 15px 10px !important;
+  }
+  header .phys-tech {
+    font-size: 9px;
+    line-height: 0.4rem;
+  }
+  header .int-tech {
+    font-size: 15px;
+    line-height: 0.4rem;
+  }
   .logo-text {
     font-size: 15px;
     margin-top: 0px;
