@@ -84,18 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return this;
         }
     
-        onUp(callback) {
-            this.onUp = callback;
-    
-            return this;
-        }
-    
-        onDown(callback) {
-            this.onDown = callback;
-    
-            return this;
-        }
-    
         handleTouchMove(evt) {
             if ( ! this.xDown || ! this.yDown ) {
                 return;
@@ -128,12 +116,12 @@ document.addEventListener("DOMContentLoaded", () => {
     
         run() {
             this.element.addEventListener('touchmove', function(evt) {
-                this.handleTouchMove(evt).bind(this);
-            }.bind(this), false);
+                this.handleTouchMove(evt);
+            }, false);
         }
     }
+    
+    var karusel = document.querySelector(".karusel")
+    var swipe = new Swipe(karusel)
 
-    var swiper = new Swipe(document.querySelectorAll(".karusel"));
-    swiper.onLeft(nextSlide);
-    swiper.onRight(prevSlide);
 });

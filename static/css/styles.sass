@@ -388,9 +388,15 @@ span.blue
         font-family: "Noto Sans", sans-serif
         line-height: 1.5
         border-radius: 5px
+        height: 50px
         margin: 10px 0
         padding: 5px 10px
         transition: all 0.5s
+        @media screen and ( max-width: 750px ) and ( min-width: 600px )
+            display: flex
+            font-size: 1.1rem
+            align-items: center
+            
 
 
 .dopcontr
@@ -404,8 +410,15 @@ span.blue
             border-radius: 5px
             text-decoration: none
             padding: 3px 15px
+        @media screen and ( max-width: 500px )
+            width: 260px
+            font-size: 1.35rem
+            height: 46px
+            
     p.techno:hover
         background-color: $dark-blue
+        
+
 
 
 
@@ -424,11 +437,15 @@ span.blue
         transition: all 0.5s
         a
             color: $white
-            border-radius: 5px
+            border-radius: 10px
             text-decoration: none
             padding: 3px 15px
+        @media screen and ( max-width: 500px )
+            width: 260px
     p.eco:hover
         background-color: $dark-green
+       
+        
 
 button.click-me
     display: block
@@ -517,6 +534,7 @@ footer
         a
             color: rgba(254, 253, 255, 0.8)
             transition: all 0.5s ease
+            text-decoration: none
         a:hover
             color: rgba(254, 253, 255, 0.68)
             font-size: 1.05em
