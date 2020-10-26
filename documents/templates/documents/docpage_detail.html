@@ -14,26 +14,23 @@ doc.upload.name -- название файла при загрузке
 doc.name -- название файла, присковенное пользователем при загрузке
 doc.date -- дата последней загрузки
 {% endcomment %}
-<div class="container">
-    <div class="row">
-        <div class="col class static-main">
-            {% comment %} <div class="bord"></div> {% endcomment %}
-            <h1 class="docpage-header">{{ docpage.name }}</h1>
+<div class="class static-main">
+    <h1 class="docpage-header">{{ docpage.name }}</h1>
 
-            <p>{{ docpage.text|safe }}</p>
+    <p>{{ docpage.text|safe }}</p>
 
-            <div class="downloadfiles">
-            {% for doc in docpage.files.all %}
-                <a href="{{ doc.upload.url }}" class="downloadfile">
-                    {% comment %} <div class="downloadfile"> {% endcomment %}
-                        <h6>{{ doc.name }}</h6>
-                        <p class="updated">Оновлено: {{ doc.date|naturaltime }}</p>
-                    {% comment %} </div> {% endcomment %}
-                </a>
-            {% endfor %}
-            </div>
-        </div>
+    <div class="downloadfiles">
+        {% for doc in docpage.files.all %}
+        <a href="{{ doc.upload.url }}" class="downloadfile">
+            {% comment %} <div class="downloadfile"> {% endcomment %}
+                <h6>{{ doc.name }}</h6>
+                <p class="updated">Оновлено: {{ doc.date|naturaltime }}</p>
+                {% comment %}
+            </div> {% endcomment %}
+        </a>
+        {% endfor %}
     </div>
 </div>
+<!-- <div class="bord"></div> -->
 
 {% endblock %}
