@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style='color: black;'>
+    <p>{{ competitor.user_record.firstname }}</p>
+    <p>{{ competitor.user_record.lastname }}</p>
+    <p>{{ competitor.user_record.email }}</p>
+    <p>{{ competitor.school }}</p>
+    <p>{{ competitor.sc_director.name }}</p>
+    <p>{{ competitor.sc_director.surname }}</p>
+    <p>{{ competitor.city }}</p>
+    <p>{{ competitor.section.short_name }}</p>
+    <p>{{ competitor.section.name }}</p>
+    <p>{{ competitor.sc_director.surname }}</p>
+    <p>{{ competitor.section_number }}</p>
+    <p>{{ competitor.phone }}</p>
+</div>
+{% endblock %}
