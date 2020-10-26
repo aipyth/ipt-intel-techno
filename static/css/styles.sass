@@ -104,6 +104,7 @@ header
     color: #1a54e7
 
     a
+        color: $blue
         height: 100%
         display: inline-block
         text-align: center
@@ -118,6 +119,10 @@ header
         box-sizing: border-box
         -moz-box-sizing: border-box
         -webkit-box-sizing: border-box
+    a:visited
+        color: $blue
+    a:active
+        color: $blue
 
 
 
@@ -667,6 +672,8 @@ footer
 
 
 // Post card on home screen
+
+
 $postcard-width: 350px
 $postcard-width-650: 230px
 $postcard-width-950: 250px
@@ -694,6 +701,8 @@ $image-container-height: 180px
             margin: 10px 10px
             box-shadow: 0 0 10px rgba(200, 200, 200, 0.7)
             transition: transform 0.5s ease
+            #figlnk
+                text-decoration: none
             @media screen and (max-width: 950px)
                 max-width: $postcard-width-950
             @media screen and (max-width: 650px)
@@ -726,6 +735,7 @@ $image-container-height: 180px
                     font-weight: 600
                     text-align: center
                     padding-top: 5px
+                    margin: 0
 
                 p
                     font-family: 'PT Serif', serif
@@ -774,21 +784,25 @@ $image-container-height: 180px
     .menu
         background-color: $blue
         margin-top: 0 !important
+        display: flex
         justify-content: flex-start !important
-        flex-direction: column
-        position: absolute
+        flex-direction: column !important
+        flex-wrap: nowrap
         max-height: 0px
         overflow: hidden
-        top: 74px
-        z-index: -1
         width: 100%
         transition: 2s ease max-height
         .menu-item
             margin-left: 10px !important
+            display: flex
             padding-left: 10px
             border-left: 5px solid $white
             a
-                color: $white
+                color: $white !important
+            a:visited
+                color: $white !important
+            a:active
+                color: $white !important
     .act
         max-height: 200px
 
