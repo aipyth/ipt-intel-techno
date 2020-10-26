@@ -504,6 +504,7 @@ span.blue {
   text-align: center;
   font-size: 1.5rem;
   font-family: "Noto Sans", sans-serif;
+  line-height: 1.5;
   border-radius: 5px;
   margin: 10px 0;
   padding: 5px 10px;
@@ -511,26 +512,25 @@ span.blue {
   transition: all 0.5s;
 }
 
-.dopcont p.link:hover {
-  padding: 5px 12px;
-}
-
 .dopcontr {
   border-left: 4px solid  #1a54e7;
   width: 50%;
 }
 
-.dopcontr p.techno a {
+.dopcontr p.techno {
   background-color: #1a54e7;
-  color: #fefdff;
-  border-radius: 5px;
-  text-decoration: none;
-  padding: 3px 15px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.dopcontr p.techno a:hover {
+.dopcontr p.techno a {
+  color: #fefdff;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 3px 15px;
+}
+
+.dopcontr p.techno:hover {
   background-color: #1a54b9;
 }
 
@@ -549,17 +549,20 @@ span.blue {
   color: #48BA4A;
 }
 
-.dopcontl p.eco a {
+.dopcontl p.eco {
   background-color: #48BA4A;
-  color: #fefdff;
-  border-radius: 5px;
-  text-decoration: none;
-  padding: 3px 15px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.dopcontl p.eco a:hover {
+.dopcontl p.eco a {
+  color: #fefdff;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 3px 15px;
+}
+
+.dopcontl p.eco:hover {
   background-color: #494;
 }
 

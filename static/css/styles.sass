@@ -386,30 +386,26 @@ span.blue
         text-align: center
         font-size: 1.5rem
         font-family: "Noto Sans", sans-serif
+        line-height: 1.5
         border-radius: 5px
         margin: 10px 0
         padding: 5px 10px
         transition: all 0.5s
-    p.link:hover
-        // font-size: 1.52rem
-        padding: 5px 12px
-
-
 
 
 .dopcontr
     border-left: 4px solid  #1a54e7
     width: 50%
     p.techno
+        background-color: $blue
+        transition: all 0.5s
         a
-            background-color: $blue
             color: $white
             border-radius: 5px
             text-decoration: none
             padding: 3px 15px
-            transition: all 0.5s
-        a:hover
-            background-color: $dark-blue
+    p.techno:hover
+        background-color: $dark-blue
 
 
 
@@ -424,15 +420,15 @@ span.blue
         li:before
             color: $green
     p.eco
+        background-color: $green
+        transition: all 0.5s
         a
-            background-color: $green
             color: $white
             border-radius: 5px
             text-decoration: none
             padding: 3px 15px
-            transition: all 0.5s
-        a:hover
-            background-color: $dark-green
+    p.eco:hover
+        background-color: $dark-green
 
 button.click-me
     display: block
@@ -676,7 +672,7 @@ footer
 
 
 // Post card on home screen
-  
+
 
 $postcard-width: 350px
 $postcard-width-650: 230px
@@ -706,7 +702,7 @@ $image-container-height: 180px
             box-shadow: 0 0 10px rgba(200, 200, 200, 0.7)
             transition: transform 0.5s ease
             #figlnk
-                text-decoration: none  
+                text-decoration: none
             @media screen and (max-width: 950px)
                 max-width: $postcard-width-950
             @media screen and (max-width: 650px)
