@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .models import CustomUser
+from .models import CustomUser, Section, ScientificDirector, Competitor
 from .forms import CustomUserChangeForm, CustomUserCreationForm
+
 
 @admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
@@ -14,12 +15,15 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Personal info', {'fields': ('firstname', 'lastname')}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser',
+                                    'groups', 'user_permissions')}),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide'),
-            'fields': ('firstname', 'lastname', 'email', 'password1', 'password2', 'is_staff', 'is_active', 'groups', 'user_permissions')
+            'fields': ('firstname', 'lastname', 'email', 'password1',
+                       'password2', 'is_staff', 'is_active', 'groups',
+                       'user_permissions')
         }),
     )
     search_fields = ('email',)
@@ -27,7 +31,8 @@ class CustomUserAdmin(UserAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         if not request.user.is_superuser:
-            return ('is_staff', 'is_active', 'is_superuser', 'groups', 'user_permissions')
+            return ('is_staff', 'is_active', 'is_superuser', 'groups',
+                    'user_permissions')
         return ()
         #     return (
         #                 (None, {'fields': ('email', 'password')}),
@@ -36,6 +41,7 @@ class CustomUserAdmin(UserAdmin):
         #             )
         # return self.fieldsets
 
-# admin.site.register(models.Section)
-# admin.site.register(models.ScientificDirector)
-# admin.site.register(models.Competitor)
+
+admin.site.register(Section)
+admin.site.register(ScientificDirector)
+admin.site.register(Competitor)
