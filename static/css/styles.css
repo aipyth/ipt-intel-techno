@@ -734,6 +734,7 @@ footer p {
   margin-bottom: 2px;
   font-size: 100%;
   line-height: 1.5em;
+  margin-top: 10px;
 }
 
 footer p a {
@@ -899,7 +900,7 @@ footer p a:hover {
   line-height: 1.3em;
   margin-bottom: 0;
   padding-top: 20px;
-  padding: 25px;
+  padding: 15px;
 }
 
 .static-main h2 {
@@ -932,6 +933,7 @@ footer p a:hover {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   margin-bottom: 15px;
+  padding-bottom: 15px;
 }
 
 .downloadfiles a {
@@ -950,7 +952,7 @@ footer p a:hover {
 }
 
 .downloadfile {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #1a54e7;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -961,12 +963,18 @@ footer p a:hover {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  padding: 15px 20px;
-  margin: 8px;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  border-radius: 20px 20px;
+  padding: 5px 10px;
+  margin: 10px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  min-width: 10rem;
   background-color: rgba(85, 193, 255, 0.035);
+}
+
+.downloadfile h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .downloadfile p.updated {
