@@ -16,6 +16,7 @@ psycopg2-binary = "*"
 scout-apm = "*"
 whitenoise = "*"
 pytest = "*"
+playwright = "*"
 
 [requires]
 python_version = "3.8"
