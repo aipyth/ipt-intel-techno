@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{% static "css/normalize.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
 
-    <link rel="stylesheet" type="text/css" href="{% static "css/flaticon.css" %}"> 
+    <link rel="stylesheet" type="text/css" href="{% static "css/flaticon.css" %}">
 
 </head>
 
@@ -45,6 +45,21 @@
 
             {% get_docpages %}
 
+            {% if user.is_authenticated %}
+            <span class="menu-item">
+                <a href="{% url 'logout' %}">Logout</a>
+            </span>
+                {% if user.is_staff %}
+                <span class="menu-item">
+                    <a href="/admin/">Admin</a>
+                </span>
+                {% endif %}
+            {% else %}
+            <span class="menu-item">
+                <a href="{% url 'login' %}">Login</a>
+            </span>
+            {% endif %}
+
             {% comment %} Someday we'll write about us {% endcomment %}
             {% comment %} <span class="menu-item">
                 <a href="">About Us</a>
@@ -55,7 +70,7 @@
 
     <div class="content-wrapper">
     {% block content %}
-    
+
     {% endblock %}
     </div>
 
