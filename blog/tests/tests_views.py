@@ -1,7 +1,7 @@
 from django.test import TestCase
 from blog.models import Post
 from django.contrib.auth import get_user_model
-from playwright import sync_playwright
+#from playwright import sync_playwright
 
 class BlogPageTest(TestCase):
     @classmethod
@@ -40,6 +40,6 @@ class BlogPageTest(TestCase):
     
     # def test_home_playwright(self):
     #     with sync_playwright() as playwright:
-    #         browser = playwright.firefox.launch(headless=True)
+    #         browser = playwright.firefox.launch(headless=False)
     #         page = browser.goto('127.0.0.1:8000')
-    #         print()
+    #         print(page)

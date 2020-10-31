@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+playwright = "*"
 
 [packages]
 django = "*"
@@ -16,7 +17,6 @@ psycopg2-binary = "*"
 scout-apm = "*"
 whitenoise = "*"
 pytest = "*"
-playwright = "*"
 
 [requires]
 python_version = "3.8"
