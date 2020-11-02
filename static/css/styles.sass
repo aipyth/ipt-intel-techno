@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400   700&family=PT+Serif:ital,wght@0,400   0,700   1,400&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200   500   600   700&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300   400   600   700&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,400&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,4000,5001,400&display=swap')
 
 $blue: rgb(26, 84, 231)
 $dark-blue: rgb(26, 84, 185)
@@ -158,20 +158,165 @@ header
     -moz-box-sizing: border-box
     -webkit-box-sizing: border-box
 
-// second logo
-
-// nav.navbar
-//     background-color: #1a54e7 !important
-
-
-// #navitem
-//     color: #fefdff
-//     font-family: 'Noto Sans', sans-serif
-
 
 .phys-tech
     font-size: 12px
 
+//Registration FORM
+
+.overlay 
+    opacity: 0
+    visibility: hidden
+
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, .5)
+    z-index: 20
+    transition: .3s all
+
+.modal 
+   
+   /* Скрываем окна  */
+   opacity: 0
+   visibility: hidden
+   
+   
+   /*  Установаем ширину окна  */
+   width: 100%
+   max-width: 500px
+   
+   /*  Центрируем и задаем z-index */
+   position: fixed
+   top: 50%
+   left: 50%
+   transform: translate(-50%, -50%)
+   z-index: 30 /* Должен быть выше чем у подложки*/
+   
+   /*  Побочные стили   */
+   text-align: center
+   padding: 10px
+   border-radius: 3px
+   transition: 0.3s all
+   background-color: $blue
+   .login-form
+        div
+            padding: 15px
+            font-size: 20px
+            display: flex
+            align-items: center
+            label
+                flex-basis: 30%
+        button.login-button
+            padding: 10px 15px !important
+            margin-top: 10px
+            font-size: 22px
+            color: $blue !important
+            font-weight: bold
+            border-radius: 6px
+            border: none !important
+        
+   h3
+       width: 90%
+       margin: 10px auto
+       font-size: 25px
+       border-bottom: 5px solid $white
+       padding-bottom: 5px
+
+p
+    font-family: "Ubuntu", sans-serif !important
+    text-align: center
+    font-size: 30px
+    font-weight: bold
+    padding: 20px
+    color: $white !important
+    
+@media screen and ( max-width: 400px )
+    .modal
+        .login-form
+            div
+                padding: 5px
+                padding-bottom: 10px !important
+                padding-top: 10px !important
+                font-size: 18px !important
+                flex-basis: 25%
+                input
+                    width: 80%
+            .password
+                label
+                    font-size: 16px
+
+
+.login-block
+    width: 500px
+    margin: 30px auto
+    text-align: center
+    padding: 10px
+    border-radius: 3px
+    transition: 0.3s all
+    background-color: $blue
+    .login-form
+            div
+                padding: 15px
+                font-size: 20px
+                display: flex
+                align-items: center
+                label
+                    flex-basis: 30%
+            button.login-button
+                padding: 10px 15px !important
+                margin-top: 10px
+                font-size: 22px
+                color: $blue !important
+                font-weight: bold
+                border-radius: 6px
+                border: none !important
+            
+    h3
+        width: 90%
+        margin: 10px auto
+        font-size: 25px
+        border-bottom: 5px solid $white
+        padding-bottom: 5px
+        
+@media screen and ( max-width: 400px )
+    .login-block
+        .login-form
+            div
+                padding: 5px
+                padding-bottom: 10px !important
+                padding-top: 10px !important
+                font-size: 18px !important
+                flex-basis: 25%
+                input
+                    width: 80%
+            .password
+                label
+                    font-size: 16px
+
+
+
+/* Стили для активных классов подложки и окна */
+
+.modal.active,
+.overlay.active
+   opacity: 1
+   visibility: visible
+
+
+
+/* Стили для кнопки закрытия */
+
+.modal__cross 
+   width: 15px
+   height: 15px
+   position: absolute
+   top: 20px
+   right: 20px
+   fill: #444
+   cursor: pointer
 
 
 
@@ -301,7 +446,7 @@ header
 // dop content
 
 p.caption
-    font-family: 'Ubuntu', sans-serif
+    font-family: "Ubuntu", sans-serif
     font-size: 20px
     line-height: 2rem
     text-align: justify
@@ -830,7 +975,7 @@ $image-container-height: 180px
             a:active
                 color: $white !important
     .act
-        max-height: 200px
+        max-height: 250px
         padding-bottom: 10px
 
 
