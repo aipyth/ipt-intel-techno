@@ -51,7 +51,7 @@ class UsersManagersTests(TestCase):
 class AccountsTest(TestCase):
     @classmethod
     def setUpTestData(self):
-        self.sd = ScientificDirector.objects.create(name="Bill", 
+        self.sd = ScientificDirector.objects.create(name="Bill",
                                                     surname="Harrington")
         self.sec = Section.objects.create(name="Biology", short_name="BIO")
         self.sec.save()

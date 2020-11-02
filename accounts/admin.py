@@ -36,8 +36,11 @@ class CustomUserAdmin(UserAdmin):
         return ()
         #     return (
         #                 (None, {'fields': ('email', 'password')}),
-        #                 ('Personal info', {'fields': ('firstname', 'lastname')}),
-        #                 ('Permissions', {'fields': ('is_active', 'is_staff',    'is_superuser', 'groups', 'user_permissions')}),
+        #                 ('Personal info', {'fields': ('firstname',
+        #                  'lastname')}),
+        #                 ('Permissions', {'fields': ('is_active',
+        #                  'is_staff', 'is_superuser', 'groups',
+        #                  'user_permissions')}),
         #             )
         # return self.fieldsets
 

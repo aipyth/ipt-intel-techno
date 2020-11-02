@@ -25,9 +25,10 @@ class SliderPostAdmin(admin.ModelAdmin):
 
     def make_active(self, request, queryset):
         queryset.update(active=True)
-    
+
     def make_unactive(self, request, queryset):
         queryset.update(active=False)
+
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(SliderPost, SliderPostAdmin)

@@ -7,7 +7,7 @@ class BlogTestClass(TestCase):
     @classmethod
     def setUpTestData(self):
         user = get_user_model()
-        with open('logo.png', 'rb') as testimage:    
+        with open('logo.png', 'rb') as testimage:
             admin = user.objects.create_superuser(
                 'superuser@mail.com', 'supersuper')
             self.testpost = Post.objects.create(
