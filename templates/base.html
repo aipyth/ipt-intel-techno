@@ -16,9 +16,8 @@
     {% endif %}
     <link rel="stylesheet" href="{% static "css/normalize.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
-
     <link rel="stylesheet" type="text/css" href="{% static "css/flaticon.css" %}">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -47,7 +46,7 @@
 
             {% if user.is_authenticated %}
             <span class="menu-item">
-                <a href="{% url 'logout' %}">Logout</a>
+                <a href="{% url 'logout' %}">Вийти</a>
             </span>
                 {% if user.is_staff %}
                 <span class="menu-item">
@@ -56,8 +55,11 @@
                 {% endif %}
             {% else %}
             <span class="menu-item">
-                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'login' %}">Увійти</a>
             </span>
+            <!-- <span class="menu-item">
+                <a class="js-open-modal" href="#" data-modal="1">Вхід</a>
+            </span> -->
             {% endif %}
 
             {% comment %} Someday we'll write about us {% endcomment %}
@@ -71,8 +73,33 @@
     <div class="content-wrapper">
     {% block content %}
 
+
     {% endblock %}
     </div>
+
+    <div class="modal" data-modal="1">
+        <!--   Svg иконка для закрытия окна  -->
+        <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="filter: invert(100%)"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+        <h3>Увійти</h3>
+        <form  method="post" class="login-form">
+            {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="email">
+            {{ form.email.errors }}
+            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+            {{ form.email }}
+        </div>
+        <div class="password">
+            {{ form.password.errors }}
+            <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+            {{ form.password }}
+        </div>
+        
+        <button type="submit" class="login-button">Login</button>
+        </form>
+         </div>
+     
+     <div class="overlay js-overlay-modal"></div>
 
     {% block footer %}
     <div class="social-links-container">
@@ -99,8 +126,8 @@
   </footer>
     {% endblock %}
     {% comment %} JS {% endcomment %}
+    <script src="{% static "scripts/modal.js" %}"></script>
     <script src="{% static "scripts/nav.js" %}"></script>
-    <script src="{% static "js/jquery-3.5.1.slim.min.js" %}"></script>
     {% comment %} <script src="{% static "js/popper.min.js" %}"></script> {% endcomment %}
 </body>
 
