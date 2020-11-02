@@ -29,7 +29,8 @@ class UsersManagersTests(TestCase):
 
     def test_create_superuser(self):
         User = get_user_model()
-        admin = User.objects.create_superuser('superuser@mail.com', 'supersuper')
+        admin = User.objects.create_superuser('superuser@mail.com',
+                                              'supersuper')
         self.assertEqual(admin.email, 'superuser@mail.com')
         self.assertTrue(admin.is_active)
         self.assertTrue(admin.is_staff)
@@ -50,13 +51,16 @@ class UsersManagersTests(TestCase):
 class AccountsTest(TestCase):
     @classmethod
     def setUpTestData(self):
-        self.sd = ScientificDirector.objects.create(name = "Bill", surname = "Harrington")
-        self.sec = Section.objects.create(name = "Biology", short_name="BIO")
+        self.sd = ScientificDirector.objects.create(name="Bill", 
+                                                    surname="Harrington")
+        self.sec = Section.objects.create(name="Biology", short_name="BIO")
         self.sec.save()
         self.sd.save()
 
     def test_creation_director(self):
-        self.assertEqual('Harrington Bill',f"{self.sd.surname} {self.sd.name}")
+        self.assertEqual('Harrington Bill',
+                         f"{self.sd.surname} {self.sd.name}")
 
     def test_creation_section(self):
-        self.assertEqual('(BIO) Biology', f"({self.sec.short_name}) {self.sec.name}")
+        self.assertEqual('(BIO) Biology',
+                         f"({self.sec.short_name}) {self.sec.name}")
