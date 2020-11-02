@@ -48,8 +48,9 @@ class Competitor(models.Model):
     sc_director = models.ForeignKey(ScientificDirector,
                                     on_delete=models.SET_NULL, null=True)
     city = models.CharField(max_length=255)
-    section = models.ForeignKey(Section, on_delete=models.SET_NULL, null=True)
-    section_number = models.PositiveIntegerField()
+    section = models.ForeignKey(Section, on_delete=models.SET_NULL, null=True,
+                                blank=True)
+    section_number = models.PositiveIntegerField(blank=True)
     phone = models.CharField(max_length=13)
 
     def __str__(self):
