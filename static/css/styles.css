@@ -1034,6 +1034,26 @@ footer p a:hover {
   max-width: 80vw;
 }
 
+.post-container .content iframe {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .post-container .content iframe {
+    height: 250px;
+    width: 110%;
+    position: relative;
+    left: -5%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .post-container .content iframe {
+    height: 200px;
+  }
+}
+
 .post-container .author-date {
   color: rgba(0, 0, 0, 0.65);
   display: -webkit-box;

@@ -18,18 +18,18 @@ class DocumentTestPage(TestCase):
         self.dcpage.save()
         testdoc.close()
 
-    def test_exact_page_exist(self):
+    def test_docpage_list(self):
         response = self.client.get('/documents/')
         self.assertEqual(response.status_code, 200)
 
-    def test_docpage_exist(self):
+    def test_exact_docpage(self):
         response = self.client.get('/documents/info/')
         self.assertEqual(response.status_code, 200)
 
-    def test_page_template(self):
+    def test_docpage_list_template(self):
         response = self.client.get('/documents/')
         self.assertTemplateUsed(response, 'documents/docpage_list.html')
 
-    def test_exact_page_template(self):
+    def test_exact_docpage_template(self):
         response = self.client.get('/documents/info/')
         self.assertTemplateUsed(response, '/documents/docpage_detail.html/')
