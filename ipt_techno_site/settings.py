@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '0.0.0.0',
     '3.127.210.54',
-    '13.48.194.116'
+    '13.48.194.116',
     'www.ipt-isef-techno.com',
     'ipt-isef-techno.com',
     '.herokuapp.com',
